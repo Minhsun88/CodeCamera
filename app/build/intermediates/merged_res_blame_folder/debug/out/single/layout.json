@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_set.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_set.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_select_group.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_select_group.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_add_member.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add_member.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_alert.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_alert.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_insert.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_insert.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_view.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\item_view.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_record.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_record.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_add_note.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_add_note.xml"
+    }
+]
