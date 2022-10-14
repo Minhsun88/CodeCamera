@@ -19,6 +19,7 @@
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3265625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/model_selecter.xml" value="0.17552083333333332" />
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/mylinearlayout.xml" value="0.3265625" />
+        <entry key="..\:/Clander_Shered/app/src/main/res/drawable/mylinearlayout2.xml" value="0.17552083333333332" />
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/switch_off.xml" value="0.17552083333333332" />
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/switch_on.xml" value="0.17552083333333332" />
         <entry key="..\:/Clander_Shered/app/src/main/res/drawable/thumb_selecter.xml" value="0.3265625" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/activity_main.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/activity_register.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_add_note.xml" value="0.25" />
+        <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_add_post.xml" value="0.15052083333333333" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_alert.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_group.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_group_add_member.xml" value="0.3015625" />
@@ -39,6 +41,7 @@
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_record.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/fragment_select_group.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/layout/item_view.xml" value="0.1" />
+        <entry key="..\:/Clander_Shered/app/src/main/res/layout/post_view.xml" value="0.3015625" />
         <entry key="..\:/Clander_Shered/app/src/main/res/menu/bottom_navigation.xml" value="0.3015625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GP/app/src/main/res/layout/activity_index.xml" value="0.25815217391304346" />
         <entry key="..\:/Users/user/AndroidStudioProjects/GP/app/src/main/res/layout/activity_main.xml" value="0.2391304347826087" />

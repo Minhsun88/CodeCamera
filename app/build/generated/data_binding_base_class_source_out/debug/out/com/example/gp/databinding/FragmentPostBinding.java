@@ -4,20 +4,38 @@ package com.example.gp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentPostBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentPostBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final TextView PostName;
+
+  @NonNull
+  public final RecyclerView RecyclerView;
+
+  @NonNull
+  public final Button btnAddNewPost;
+
+  private FragmentPostBinding(@NonNull FrameLayout rootView, @NonNull TextView PostName,
+      @NonNull RecyclerView RecyclerView, @NonNull Button btnAddNewPost) {
     this.rootView = rootView;
+    this.PostName = PostName;
+    this.RecyclerView = RecyclerView;
+    this.btnAddNewPost = btnAddNewPost;
   }
 
   @Override
@@ -43,10 +61,31 @@ public final class FragmentPostBinding implements ViewBinding {
 
   @NonNull
   public static FragmentPostBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.PostName;
+      TextView PostName = ViewBindings.findChildViewById(rootView, id);
+      if (PostName == null) {
+        break missingId;
+      }
 
-    return new FragmentPostBinding((FrameLayout) rootView);
+      id = R.id.RecyclerView;
+      RecyclerView RecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (RecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAddNewPost;
+      Button btnAddNewPost = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddNewPost == null) {
+        break missingId;
+      }
+
+      return new FragmentPostBinding((FrameLayout) rootView, PostName, RecyclerView, btnAddNewPost);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

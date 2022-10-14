@@ -37,7 +37,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View itemView = layoutInflater.inflate(R.layout.item_view,parent,false);
 
-        /* adapter 版面設定 */
         ViewHolder holder =  new ViewHolder(itemView);
         holder.textViewTitle = itemView.findViewById(R.id.MyTitle);
         holder.textViewText = itemView.findViewById(R.id.MyText);
