@@ -2554,10 +2554,12 @@ int drawable abc_textfield_search_material 0x7f080054
 int drawable abc_vector_test 0x7f080055
 int drawable avd_hide_password 0x7f080056
 int drawable avd_show_password 0x7f080057
+int drawable background 0x7f0800cc
 int drawable background_color_circle_selector 0x7f080058
 int drawable background_transparent 0x7f080059
 int drawable baseline_person_black_36 0x7f08005a
 int drawable baseline_photo_camera_black_24 0x7f08005b
+int drawable bottom_nav_icon_color_selector 0x7f0800cb
 int drawable btn_bg_selector 0x7f08005c
 int drawable btn_checkbox_checked_mtrl 0x7f08005d
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08005e
@@ -2606,6 +2608,7 @@ int drawable ic_baseline_post_24 0x7f080088
 int drawable ic_baseline_post_add_36 0x7f080089
 int drawable ic_baseline_record_24 0x7f08008a
 int drawable ic_baseline_save_24 0x7f08008b
+int drawable ic_baseline_settings_24 0x7f0800ca
 int drawable ic_clock_black_24dp 0x7f08008c
 int drawable ic_keyboard_black_24dp 0x7f08008d
 int drawable ic_launcher_background 0x7f08008e
@@ -2676,6 +2679,8 @@ int id BOTTOM_START 0x7f090004
 int id CTRL 0x7f090005
 int id FUNCTION 0x7f090006
 int id GroupName 0x7f090007
+int id InputEmail 0x7f09024f
+int id InputPassword 0x7f090250
 int id InsertGroup 0x7f090008
 int id META 0x7f090009
 int id MyText 0x7f09000a
@@ -2696,6 +2701,8 @@ int id SHOW_PROGRESS 0x7f090017
 int id SYM 0x7f090018
 int id TOP_END 0x7f090019
 int id TOP_START 0x7f09001a
+int id TextInputLayout1 0x7f090251
+int id TextInputLayout2 0x7f090252
 int id Time 0x7f09001b
 int id abbreviationsBar 0x7f09001c
 int id accelerate 0x7f09001d
@@ -2764,7 +2771,6 @@ int id addPostImg 0x7f090248
 int id addScrollView 0x7f090249
 int id adjust_height 0x7f09005a
 int id adjust_width 0x7f09005b
-int id alert 0x7f09005c
 int id alertTitle 0x7f09005d
 int id aligned 0x7f09005e
 int id all 0x7f09005f
@@ -2806,7 +2812,6 @@ int id button 0x7f090080
 int id button2 0x7f090081
 int id buttonPanel 0x7f090082
 int id buttonSave 0x7f090083
-int id button_SetTarget 0x7f090084
 int id cache_measures 0x7f090085
 int id calendarContainer 0x7f090086
 int id calendarGridView 0x7f090087
@@ -2898,7 +2903,6 @@ int id easeOut 0x7f0900dc
 int id east 0x7f0900dd
 int id edT_account 0x7f0900de
 int id edT_name 0x7f0900df
-int id edT_passwd 0x7f0900e0
 int id edT_password 0x7f0900e1
 int id edT_password2 0x7f0900e2
 int id edText 0x7f0900e3
@@ -2912,6 +2916,8 @@ int id endToStart 0x7f0900ea
 int id end_padder 0x7f0900eb
 int id enterAlways 0x7f0900ec
 int id enterAlwaysCollapsed 0x7f0900ed
+int id errorText1 0x7f090253
+int id errorText2 0x7f090254
 int id exitUntilCollapsed 0x7f0900ee
 int id expand_activities_button 0x7f0900ef
 int id expanded_menu 0x7f0900f0
@@ -2979,6 +2985,7 @@ int id linear 0x7f09012d
 int id listMode 0x7f09012e
 int id list_item 0x7f09012f
 int id locale 0x7f090130
+int id loginId 0x7f09024d
 int id ltr 0x7f090131
 int id main_navgation 0x7f090132
 int id many_days_picker 0x7f090133
@@ -3055,6 +3062,7 @@ int id negative_button 0x7f090179
 int id never 0x7f09017a
 int id neverCompleteToEnd 0x7f09017b
 int id neverCompleteToStart 0x7f09017c
+int id nickName 0x7f09024e
 int id noScroll 0x7f09017d
 int id noState 0x7f09017e
 int id none 0x7f09017f
@@ -3129,6 +3137,7 @@ int id select_dialog_listview 0x7f0901c3
 int id selected 0x7f0901c4
 int id selection_type 0x7f0901c5
 int id set 0x7f0901c6
+int id setting 0x7f09024c
 int id sharedValueSet 0x7f0901c7
 int id sharedValueUnset 0x7f0901c8
 int id shortcut 0x7f0901c9
@@ -3197,7 +3206,6 @@ int id textSpacerNoTitle 0x7f090207
 int id textStart 0x7f090208
 int id textTop 0x7f090209
 int id textView 0x7f09020a
-int id textView13 0x7f09020b
 int id textView2 0x7f09020c
 int id textView3 0x7f09020d
 int id textViewName 0x7f09024b
@@ -3387,6 +3395,7 @@ int layout fragment_home 0x7f0c003c
 int layout fragment_post 0x7f0c003d
 int layout fragment_record 0x7f0c003e
 int layout fragment_select_group 0x7f0c003f
+int layout fragment_setting 0x7f0c0096
 int layout item_view 0x7f0c0040
 int layout m3_alert_dialog 0x7f0c0041
 int layout m3_alert_dialog_actions 0x7f0c0042

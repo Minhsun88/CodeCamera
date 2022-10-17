@@ -4,7 +4,6 @@ package com.example.gp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,15 +20,10 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button buttonSetTarget;
-
-  @NonNull
   public final CalendarView calendarView;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Button buttonSetTarget,
-      @NonNull CalendarView calendarView) {
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull CalendarView calendarView) {
     this.rootView = rootView;
-    this.buttonSetTarget = buttonSetTarget;
     this.calendarView = calendarView;
   }
 
@@ -60,19 +54,13 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_SetTarget;
-      Button buttonSetTarget = ViewBindings.findChildViewById(rootView, id);
-      if (buttonSetTarget == null) {
-        break missingId;
-      }
-
       id = R.id.calendarView;
       CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((FrameLayout) rootView, buttonSetTarget, calendarView);
+      return new FragmentHomeBinding((FrameLayout) rootView, calendarView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

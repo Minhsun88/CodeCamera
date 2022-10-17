@@ -154,7 +154,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\a3
 	android:allowBackup
 		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-62
 meta-data#com.google.android.actions
 ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:12:9-14:45
 	android:resource

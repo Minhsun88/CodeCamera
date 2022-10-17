@@ -35,18 +35,21 @@ public class index extends AppCompatActivity {
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
-                case R.id.alert:
-                    replaceFragment(new AlertFragment());
-                    break;
+//                case R.id.alert:
+//                    replaceFragment(new AlertFragment());
+//                    break;
                 case R.id.record:
                     replaceFragment(new RecordFragment());
                     break;
                 case R.id.post:
                     replaceFragment(new PostFragment());
                     break;
-                case R.id.groups:
-                    replaceFragment(new GroupFragment());
+                case R.id.setting:
+                    replaceFragment(new SettingFragment());
                     break;
+//                case R.id.groups:
+//                    replaceFragment(new GroupFragment());
+//                    break;
             }
 
             return true;

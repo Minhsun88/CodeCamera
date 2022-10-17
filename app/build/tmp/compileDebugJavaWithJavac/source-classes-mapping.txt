@@ -20,6 +20,8 @@ com/example/gp/databinding/ItemViewBinding.java
 com/example/gp/AddNoteFragment.java
  com.example.gp.AddNoteFragment
  com.example.gp.AddNoteFragment$1
+com/example/gp/databinding/FragmentSettingBinding.java
+ com.example.gp.databinding.FragmentSettingBinding
 com/example/gp/databinding/ActivityMainBinding.java
  com.example.gp.databinding.ActivityMainBinding
 com/example/gp/PostAdapter.java
@@ -36,6 +38,8 @@ com/example/gp/AddPostFragment.java
  com.example.gp.AddPostFragment$1
  com.example.gp.AddPostFragment$2
  com.example.gp.AddPostFragment$3
+ com.example.gp.AddPostFragment$4
+ com.example.gp.AddPostFragment$5
 com/example/gp/GroupSetFragment.java
  com.example.gp.GroupSetFragment
 com/example/gp/databinding/FragmentHomeBinding.java
@@ -49,6 +53,9 @@ com/example/gp/RecordFragment.java
 com/example/gp/GroupSelectFragment.java
  com.example.gp.GroupSelectFragment
  com.example.gp.GroupSelectFragment$1
+com/example/gp/SettingFragment.java
+ com.example.gp.SettingFragment
+ com.example.gp.SettingFragment$1
 com/example/gp/HomeFragment.java
  com.example.gp.HomeFragment
 com/example/gp/GroupAddMemberFragment.java

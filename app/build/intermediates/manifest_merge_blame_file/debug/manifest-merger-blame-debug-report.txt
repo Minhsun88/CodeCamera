@@ -36,8 +36,8 @@
 24        android:supportsRtl="true"
 24-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:10:9-35
 25        android:testOnly="true"
-26        android:theme="@style/Theme.GP" >
-26-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-40
+26        android:theme="@style/Theme.Design.Light.NoActionBar" >
+26-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-62
 27        <meta-data
 27-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:12:9-14:45
 28            android:name="com.google.android.actions"

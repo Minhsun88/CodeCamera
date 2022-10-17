@@ -2555,10 +2555,12 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background
 drawable background_color_circle_selector
 drawable background_transparent
 drawable baseline_person_black_36
 drawable baseline_photo_camera_black_24
+drawable bottom_nav_icon_color_selector
 drawable btn_bg_selector
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2607,6 +2609,7 @@ drawable ic_baseline_post_24
 drawable ic_baseline_post_add_36
 drawable ic_baseline_record_24
 drawable ic_baseline_save_24
+drawable ic_baseline_settings_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2677,6 +2680,8 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id GroupName
+id InputEmail
+id InputPassword
 id InsertGroup
 id META
 id MyText
@@ -2697,6 +2702,8 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id TextInputLayout1
+id TextInputLayout2
 id Time
 id abbreviationsBar
 id accelerate
@@ -2765,7 +2772,6 @@ id addPostImg
 id addScrollView
 id adjust_height
 id adjust_width
-id alert
 id alertTitle
 id aligned
 id all
@@ -2807,7 +2813,6 @@ id button
 id button2
 id buttonPanel
 id buttonSave
-id button_SetTarget
 id cache_measures
 id calendarContainer
 id calendarGridView
@@ -2899,7 +2904,6 @@ id easeOut
 id east
 id edT_account
 id edT_name
-id edT_passwd
 id edT_password
 id edT_password2
 id edText
@@ -2913,6 +2917,8 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorText1
+id errorText2
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2980,6 +2986,7 @@ id linear
 id listMode
 id list_item
 id locale
+id loginId
 id ltr
 id main_navgation
 id many_days_picker
@@ -3056,6 +3063,7 @@ id negative_button
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nickName
 id noScroll
 id noState
 id none
@@ -3130,6 +3138,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id set
+id setting
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3198,7 +3207,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView13
 id textView2
 id textView3
 id textViewName
@@ -3388,6 +3396,7 @@ layout fragment_home
 layout fragment_post
 layout fragment_record
 layout fragment_select_group
+layout fragment_setting
 layout item_view
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

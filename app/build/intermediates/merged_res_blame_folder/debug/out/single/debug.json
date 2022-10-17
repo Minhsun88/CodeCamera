@@ -20,8 +20,16 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_record_24.xml"
     },
     {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_setting.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_setting.xml"
+    },
+    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_mms_36.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_mms_36.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -46,6 +54,10 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_24.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_icon_color_selector.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\bottom_nav_icon_color_selector.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_insert.xml.flat",
@@ -174,6 +186,10 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_person_black_36.png.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\baseline_person_black_36.png"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_background.png.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\background.png"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group.xml.flat",

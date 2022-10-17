@@ -1,5 +1,7 @@
 package com.example.gp;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -34,10 +37,9 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class AddPostFragment extends Fragment {
-
     private FragmentAddPostBinding B;
-
     private StorageReference StorageRef;
+    private FirebaseAuth Auth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     String postId ;
 
@@ -51,11 +53,10 @@ public class AddPostFragment extends Fragment {
                              Bundle savedInstanceState) {
         B = FragmentAddPostBinding.inflate(inflater,container,false);
         View view = B.getRoot();
-
         StorageRef = FirebaseStorage.getInstance().getReference();
 
-
         db.collection("MemberData")
+                .whereEqualTo("account",Auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -88,7 +89,6 @@ public class AddPostFragment extends Fragment {
                         .document(postId)
                         .set(Post);
 
-
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout,new PostFragment());
                 fragmentTransaction.commit();
@@ -103,7 +103,36 @@ public class AddPostFragment extends Fragment {
                 startActivityForResult(it, 101);
             }
         });
-
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if ( requestCode == 101 && resultCode == RESULT_OK){
+            Uri uri = data.getData();
+            ImageView imageView = new ImageView(getContext());//新增ImageView
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 400);
+            imageView.setLayoutParams(params);//調整ImageView大小
+            Glide.with(getContext())
+                    .load(uri)
+                    .into(imageView);
+            B.addLinear.addView(imageView);
+
+            StorageRef.child("PostImg").child(postId+uri.getLastPathSegment())
+                    .putFile(uri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Toast.makeText(getContext(),"上傳成功",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(),""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
 }
