@@ -14,6 +14,7 @@ import com.example.gp.databinding.FragmentSettingBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -37,14 +38,14 @@ public class SettingFragment extends Fragment {
         B.loginId.setText(Auth.getCurrentUser().getEmail());
 
         db.collection("MemberData")
-                .whereEqualTo("account",Auth.getCurrentUser().getEmail())
-                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .document(Auth.getCurrentUser().getEmail())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()){
-                    for (QueryDocumentSnapshot doc: task.getResult())
-                    {
-                        B.nickName.setText(doc.getString("name"));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        B.nickName.setText(document.getData().get("name").toString());
                     }
                 }
             }

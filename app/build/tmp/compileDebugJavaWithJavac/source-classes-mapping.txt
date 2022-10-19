@@ -20,6 +20,7 @@ com/example/gp/databinding/ItemViewBinding.java
 com/example/gp/AddNoteFragment.java
  com.example.gp.AddNoteFragment
  com.example.gp.AddNoteFragment$1
+ com.example.gp.AddNoteFragment$2
 com/example/gp/databinding/FragmentSettingBinding.java
  com.example.gp.databinding.FragmentSettingBinding
 com/example/gp/databinding/ActivityMainBinding.java
@@ -46,10 +47,8 @@ com/example/gp/databinding/FragmentHomeBinding.java
  com.example.gp.databinding.FragmentHomeBinding
 com/example/gp/databinding/ActivityRegisterBinding.java
  com.example.gp.databinding.ActivityRegisterBinding
-com/example/gp/RecordFragment.java
- com.example.gp.RecordFragment
- com.example.gp.RecordFragment$1
- com.example.gp.RecordFragment$2
+com/example/gp/AlertFragment.java
+ com.example.gp.AlertFragment
 com/example/gp/GroupSelectFragment.java
  com.example.gp.GroupSelectFragment
  com.example.gp.GroupSelectFragment$1
@@ -94,17 +93,20 @@ com/example/gp/databinding/FragmentRecordBinding.java
  com.example.gp.databinding.FragmentRecordBinding
 com/example/gp/databinding/FragmentSelectGroupBinding.java
  com.example.gp.databinding.FragmentSelectGroupBinding
+com/example/gp/index.java
+ com.example.gp.index
+com/example/gp/databinding/FragmentGroupSetBinding.java
+ com.example.gp.databinding.FragmentGroupSetBinding
+com/example/gp/databinding/FragmentGroupInsertBinding.java
+ com.example.gp.databinding.FragmentGroupInsertBinding
 com/example/gp/NoteAdapter.java
  com.example.gp.NoteAdapter
  com.example.gp.NoteAdapter$1
  com.example.gp.NoteAdapter$2
  com.example.gp.NoteAdapter$2$1
+ com.example.gp.NoteAdapter$2$1$1
  com.example.gp.NoteAdapter$ViewHolder
-com/example/gp/databinding/FragmentGroupSetBinding.java
- com.example.gp.databinding.FragmentGroupSetBinding
-com/example/gp/databinding/FragmentGroupInsertBinding.java
- com.example.gp.databinding.FragmentGroupInsertBinding
-com/example/gp/AlertFragment.java
- com.example.gp.AlertFragment
-com/example/gp/index.java
- com.example.gp.index
+com/example/gp/RecordFragment.java
+ com.example.gp.RecordFragment
+ com.example.gp.RecordFragment$1
+ com.example.gp.RecordFragment$2

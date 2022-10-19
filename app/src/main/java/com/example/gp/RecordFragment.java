@@ -18,6 +18,8 @@ import android.widget.Button;
 import com.example.gp.databinding.FragmentRecordBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -28,7 +30,11 @@ public class RecordFragment extends Fragment {
 
     private FragmentRecordBinding B;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String RcTitle;
+    private FirebaseAuth Auth = FirebaseAuth.getInstance();
+
+    private ArrayList TitleList = new ArrayList();
+    private ArrayList TextList = new ArrayList();
+    private ArrayList TimeList = new ArrayList();
     ArrayList<String> arrayList = new ArrayList<>();
     NoteAdapter adapter;
 
@@ -43,32 +49,27 @@ public class RecordFragment extends Fragment {
                              Bundle savedInstanceState) {
         B = FragmentRecordBinding.inflate(inflater,container,false);
         View view = B.getRoot();
-        return view;
-    }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        db.collection("Notes")
+        db.collection("MemberData")
+                .document(Auth.getCurrentUser().getEmail())
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful())
-                        {
-                            for (QueryDocumentSnapshot doc: task.getResult())
-                            {
-                                String Title = doc.getString("Title");
-                                RcTitle = Title;
-                                Log.d("Demo",""+Title);
-                                arrayList.add(RcTitle);
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                if(document.get("Titles") != null && document.get("Texts") != null && document.get("Times") != null) {
+                                    TitleList = (ArrayList) document.get("Titles");
 
+                                    for(int i = 0 ;i < TitleList.size(); i++){
+                                        arrayList.add(TitleList.get(i).toString());
+                                    }
+                                    adapter =new NoteAdapter(getContext(),arrayList);
+                                    B.RecyclerView.setAdapter(adapter);
+                                    B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                                }
                             }
-                            Log.d("Demo",""+arrayList.size());
-                            adapter =new NoteAdapter(getContext(),arrayList);
-                            B.RecyclerView.setAdapter(adapter);
-                            B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                         }
                     }
                 });
@@ -81,6 +82,7 @@ public class RecordFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-    }
 
+        return view;
+    }
 }
