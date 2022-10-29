@@ -2603,6 +2603,7 @@ int drawable ic_baseline_add_24 0x7f080083
 int drawable ic_baseline_alert_24 0x7f080084
 int drawable ic_baseline_groups_24 0x7f080085
 int drawable ic_baseline_home_24 0x7f080086
+int drawable ic_baseline_message_24 0x7f0800cd
 int drawable ic_baseline_mms_36 0x7f080087
 int drawable ic_baseline_post_24 0x7f080088
 int drawable ic_baseline_post_add_36 0x7f080089

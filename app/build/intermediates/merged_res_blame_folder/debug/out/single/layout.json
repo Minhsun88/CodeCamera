@@ -16,12 +16,12 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add_member.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_alert.xml",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_alert.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_insert.xml",

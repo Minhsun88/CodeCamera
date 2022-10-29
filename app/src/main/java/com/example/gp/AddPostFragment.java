@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.gp.databinding.FragmentAddPostBinding;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -33,6 +37,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -41,7 +46,10 @@ public class AddPostFragment extends Fragment {
     private StorageReference StorageRef;
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String postId ;
+    private ArrayList TextList = new ArrayList();
+    private ArrayList TimeList = new ArrayList();
+    private ArrayList UriList = new ArrayList();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,17 +64,13 @@ public class AddPostFragment extends Fragment {
         StorageRef = FirebaseStorage.getInstance().getReference();
 
         db.collection("MemberData")
-                .whereEqualTo("account",Auth.getCurrentUser().getEmail())
+                .document(Auth.getCurrentUser().getEmail())
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for (QueryDocumentSnapshot doc : task.getResult()){
-                                String name = doc.getString("name");
-                                B.textViewName.setText(name);
-                            }
-                        }
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        DocumentSnapshot doc = task.getResult();
+                        if(doc.exists()){B.textViewName.setText(doc.get("name").toString());}
                     }
                 });
 
@@ -74,26 +78,48 @@ public class AddPostFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String Text = B.PostEdText.getText().toString();
-                String Name = B.textViewName.getText().toString();
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
-                String Time =  format.format(new Date());
-                postId = "Post" + "_" +Time;
+                String Time = format.format(new Date());
 
-                HashMap<String,Object> Post = new HashMap<>();
-                Post.put("Text",Text);
-                Post.put("Time",Time);
-                Post.put("Name",Name);
-                Post.put("postId",postId);
+                HashMap<String,Object> Posts = new HashMap<>();
+                Posts.put("PostTexts",Text);
+                Posts.put("PostTimes",Time);
+                Posts.put("PostAuthor",Auth.getCurrentUser().getEmail());
+                Posts.put("PostPicCount",UriList.size());
+                db.collection("Posts")
+                        .add(Posts).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentReference> task) {
+                        for (int i = 0 ; i < UriList.size() ; i++ ){
+                            Uri uri = (Uri) UriList.get(i);
 
-                db.collection("Post")
-                        .document(postId)
-                        .set(Post);
+                            StorageReference ref = StorageRef.child("PostImg").child( task.getResult().getId() + "_" + i);
+                            ref.putFile(uri)
+                                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        Log.d("AAAAA","上傳成功");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d("AAAAA",e.getMessage());
+                                    }
+                                });
+
+                        }
+                    }
+                });
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout,new PostFragment());
+                fragmentTransaction.replace(R.id.frame_layout, new PostFragment());
                 fragmentTransaction.commit();
+
+                Log.d("AAAAA",UriList.toString());
             }
         });
+
 
         B.addPostImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,20 +145,8 @@ public class AddPostFragment extends Fragment {
                     .into(imageView);
             B.addLinear.addView(imageView);
 
-            StorageRef.child("PostImg").child(postId+uri.getLastPathSegment())
-                    .putFile(uri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(getContext(),"上傳成功",Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getContext(),""+e.getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            UriList.add(uri);
+
         }
     }
 }

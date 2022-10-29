@@ -55,10 +55,12 @@ public class AddNoteFragment extends Fragment {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        if(document.get("Titles") != null && document.get("Texts") != null && document.get("Times") != null) {
-                            TitleList = (ArrayList) document.get("Titles");
-                            TextList = (ArrayList) document.get("Texts");
-                            TimeList = (ArrayList) document.get("Times");
+                        if( document.get("NoteTitles") != null &&
+                            document.get("NoteTexts") != null &&
+                            document.get("NoteTimes") != null ) {
+                            TitleList = (ArrayList) document.get("NoteTitles");
+                            TextList = (ArrayList) document.get("NoteTexts");
+                            TimeList = (ArrayList) document.get("NoteTimes");
                         }
                     } else {
                         Log.d("AAAAA","沒資料");
@@ -83,9 +85,9 @@ public class AddNoteFragment extends Fragment {
                 TimeList.add(Time);
 
                 HashMap<String,Object> Notes = new HashMap<>();
-                Notes.put("Titles",TitleList);
-                Notes.put("Texts",TextList);
-                Notes.put("Times",TimeList);
+                Notes.put("NoteTitles",TitleList);
+                Notes.put("NoteTexts",TextList);
+                Notes.put("NoteTimes",TimeList);
 
                 db.collection("MemberData")
                         .document(Auth.getCurrentUser().getEmail())

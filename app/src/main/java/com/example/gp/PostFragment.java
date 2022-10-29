@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import com.example.gp.databinding.FragmentPostBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -26,6 +28,7 @@ public class PostFragment extends Fragment {
 
     private FragmentPostBinding B;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth Auth = FirebaseAuth.getInstance();
     ArrayList<String> arrayListPost = new ArrayList<>();
     PostAdapter adapter;
 
@@ -40,7 +43,8 @@ public class PostFragment extends Fragment {
         B = FragmentPostBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("Post")
+        db.collection("Posts")
+                .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -49,12 +53,10 @@ public class PostFragment extends Fragment {
                         {
                             for (QueryDocumentSnapshot doc: task.getResult())
                             {
-                                String PostId = doc.getString("postId");
-                                Log.d("Demo",""+PostId);
-                                arrayListPost.add(PostId);
+                                String PostId = doc.getId();
 
+                                arrayListPost.add(PostId);
                             }
-                            Log.d("Demo",""+arrayListPost.size());
                             adapter =new PostAdapter(getContext(),arrayListPost);
                             B.RecyclerView.setAdapter(adapter);
                             B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

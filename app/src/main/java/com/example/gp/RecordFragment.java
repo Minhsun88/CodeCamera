@@ -33,8 +33,6 @@ public class RecordFragment extends Fragment {
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
 
     private ArrayList TitleList = new ArrayList();
-    private ArrayList TextList = new ArrayList();
-    private ArrayList TimeList = new ArrayList();
     ArrayList<String> arrayList = new ArrayList<>();
     NoteAdapter adapter;
 
@@ -59,8 +57,10 @@ public class RecordFragment extends Fragment {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-                                if(document.get("Titles") != null && document.get("Texts") != null && document.get("Times") != null) {
-                                    TitleList = (ArrayList) document.get("Titles");
+                                if( document.get("NoteTitles") != null &&
+                                    document.get("NoteTexts") != null &&
+                                    document.get("NoteTimes") != null ) {
+                                    TitleList = (ArrayList) document.get("NoteTitles");
 
                                     for(int i = 0 ;i < TitleList.size(); i++){
                                         arrayList.add(TitleList.get(i).toString());

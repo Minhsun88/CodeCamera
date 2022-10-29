@@ -12,6 +12,10 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_message_24.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_message_24.xml"
+    },
+    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_post_view.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\post_view.xml"
     },

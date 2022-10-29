@@ -42,6 +42,13 @@
                 android:layout_margin="10dp"
                 android:thumb="@drawable/thumb_selector"
                 android:track="@drawable/track_selector"/>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="add"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_bg_selector"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
