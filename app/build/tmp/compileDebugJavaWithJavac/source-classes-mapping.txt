@@ -73,8 +73,8 @@ com/example/gp/databinding/FragmentHomeBinding.java
  com.example.gp.databinding.FragmentHomeBinding
 com/example/gp/databinding/ActivityRegisterBinding.java
  com.example.gp.databinding.ActivityRegisterBinding
-com/example/gp/index.java
- com.example.gp.index
+com/example/gp/databinding/FragmentGroupInsertBinding.java
+ com.example.gp.databinding.FragmentGroupInsertBinding
 com/example/gp/GroupSelectFragment.java
  com.example.gp.GroupSelectFragment
  com.example.gp.GroupSelectFragment$1
@@ -102,8 +102,8 @@ com/example/gp/databinding/FragmentSelectGroupBinding.java
  com.example.gp.databinding.FragmentSelectGroupBinding
 com/example/gp/databinding/FragmentGroupSetBinding.java
  com.example.gp.databinding.FragmentGroupSetBinding
-com/example/gp/databinding/FragmentGroupInsertBinding.java
- com.example.gp.databinding.FragmentGroupInsertBinding
+com/example/gp/index.java
+ com.example.gp.index
 com/example/gp/NoteAdapter.java
  com.example.gp.NoteAdapter
  com.example.gp.NoteAdapter$1

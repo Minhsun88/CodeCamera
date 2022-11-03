@@ -31,7 +31,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     private ArrayList TitleList = new ArrayList();
     private ArrayList TextList = new ArrayList();
-    private ArrayList TimeList = new ArrayList();
+    private ArrayList DateList = new ArrayList();
 
     public NoteAdapter(Context mContext, ArrayList<String> arrayList) {
         this.mContext = mContext;
@@ -68,16 +68,17 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if(document.exists()){
-                                if( document.get("NoteTitles") != null &&
-                                    document.get("NoteTexts") != null &&
-                                    document.get("NoteTimes") != null ) {
+                                if(     document.get("NoteTitles") != null &&
+                                        document.get("NoteTexts") != null &&
+                                        document.get("NoteDates") != null &&
+                                        document.get("NoteTimes") != null  ) {
                                     TitleList = (ArrayList) document.get("NoteTitles");
                                     TextList = (ArrayList) document.get("NoteTexts");
-                                    TimeList = (ArrayList) document.get("NoteTimes");
+                                    DateList = (ArrayList) document.get("NoteDates");
 
                                     holder.textViewTitle.setText(TitleList.get(position).toString());
                                     holder.textViewText.setText(TextList.get(position).toString());
-                                    holder.textViewTime.setText(TimeList.get(position).toString());
+                                    holder.textViewTime.setText(DateList.get(position).toString());
                                 }
                             } else {
                                 Log.d("AAAAA",task.getException().toString());
@@ -107,18 +108,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                                                     if(document.exists()){
                                                         TitleList = (ArrayList) document.get("NoteTitles");
                                                         TextList = (ArrayList) document.get("NoteTexts");
-                                                        TimeList = (ArrayList) document.get("NoteTimes");
+                                                        DateList = (ArrayList) document.get("NoteDates");
 
                                                         TitleList.remove(id);
-                                                        TimeList.remove(id);
+                                                        DateList.remove(id);
                                                         TextList.remove(id);
 
                                                         HashMap<String,Object> Notes = new HashMap<>();
                                                         Notes.put("NoteTitles",TitleList);
                                                         Notes.put("NoteTexts",TextList);
-                                                        Notes.put("NoteTimes",TimeList);
+                                                        Notes.put("NoteDates",DateList);
 
-                                                        db.collection("MemberData")
+                                                        db.collection("Notes")
                                                                 .document(Auth.getCurrentUser().getEmail())
                                                                 .update(Notes);
 

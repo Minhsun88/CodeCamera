@@ -57,9 +57,7 @@ public class RecordFragment extends Fragment {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-                                if( document.get("NoteTitles") != null &&
-                                    document.get("NoteTexts") != null &&
-                                    document.get("NoteTimes") != null ) {
+                                try{
                                     TitleList = (ArrayList) document.get("NoteTitles");
 
                                     for(int i = 0 ;i < TitleList.size(); i++){
@@ -68,6 +66,8 @@ public class RecordFragment extends Fragment {
                                     adapter =new NoteAdapter(getContext(),arrayList);
                                     B.RecyclerView.setAdapter(adapter);
                                     B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                                } catch (Exception e){
+                                    Log.d("AAAAA",e.getMessage());
                                 }
                             }
                         }

@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
                                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                         DocumentSnapshot doc = task.getResult();
                                         try {
-                                            TimeList = (ArrayList) doc.get("NoteTimes");
+                                            TimeList = (ArrayList) doc.get("NoteDates");
                                             for(int i = 0 ; i < TimeList.size() ; i++){
                                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
                                                 Date date = sdf.parse(TimeList.get(i));
