@@ -2604,8 +2604,10 @@ drawable ic_baseline_add_24
 drawable ic_baseline_alert_24
 drawable ic_baseline_groups_24
 drawable ic_baseline_home_24
+drawable ic_baseline_list_alt_24
 drawable ic_baseline_message_24
 drawable ic_baseline_mms_36
+drawable ic_baseline_photo_library_24
 drawable ic_baseline_post_24
 drawable ic_baseline_post_add_36
 drawable ic_baseline_record_24
@@ -2685,6 +2687,7 @@ id InputEmail
 id InputPassword
 id InsertGroup
 id META
+id Modeswitch
 id MyText
 id MyTitle
 id NO_DEBUG
@@ -2705,6 +2708,8 @@ id TOP_END
 id TOP_START
 id TextInputLayout1
 id TextInputLayout2
+id TextViewDate
+id TextViewTime
 id Time
 id abbreviationsBar
 id accelerate
@@ -2809,6 +2814,8 @@ id browser_actions_menu_view
 id btnAddNewNote
 id btnAddNewPost
 id btnSavePost
+id btnSetDate
+id btnSetTime
 id btn_register
 id button
 id button2

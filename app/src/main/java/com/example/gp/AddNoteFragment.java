@@ -1,5 +1,7 @@
 package com.example.gp;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import com.example.gp.databinding.FragmentAddNoteBinding;
 import com.example.gp.databinding.FragmentRecordBinding;
@@ -23,14 +27,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class AddNoteFragment extends Fragment {
 
     private FragmentAddNoteBinding B;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
+
+    DatePickerDialog.OnDateSetListener datePicker;
+    Calendar calendar = Calendar.getInstance();
 
     private ArrayList TitleList = new ArrayList();
     private ArrayList TextList = new ArrayList();
@@ -48,7 +57,7 @@ public class AddNoteFragment extends Fragment {
         B = FragmentAddNoteBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("MemberData").document(Auth.getCurrentUser().getEmail()).
+        db.collection("Notes").document(Auth.getCurrentUser().getEmail()).
                 get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -77,7 +86,7 @@ public class AddNoteFragment extends Fragment {
 
                 String Title = B.edTitle.getText().toString();
                 String Text = B.edText.getText().toString();
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
                 String Time =  format.format(new Date());
 
                 TitleList.add(Title);
@@ -89,13 +98,51 @@ public class AddNoteFragment extends Fragment {
                 Notes.put("NoteTexts",TextList);
                 Notes.put("NoteTimes",TimeList);
 
-                db.collection("MemberData")
+                db.collection("Notes")
                         .document(Auth.getCurrentUser().getEmail())
                         .update(Notes);
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout,new RecordFragment());
                 fragmentTransaction.commit();
+            }
+        });
+
+        B.btnSetTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c = Calendar.getInstance();
+                int hour = c.get(Calendar.HOUR_OF_DAY);
+                int minute = c.get(Calendar.MINUTE);
+                new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int HH, int mm) {
+                        B.TextViewTime.setText("時間 : "+HH + ":"+mm);
+                    }
+                },hour,minute,true).show();
+            }
+        });
+        //日期
+        datePicker = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
+                String myFormat = "yyyy/MM/dd";
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.TAIWAN);
+                B.TextViewDate.setText("日期 : " + sdf.format(calendar.getTime()));
+            }
+        };
+        //日期
+        B.btnSetDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog dialog = new DatePickerDialog(getContext(),datePicker,
+                        calendar.get(Calendar.YEAR),
+                        calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH));
+                dialog.show();
             }
         });
 

@@ -2603,8 +2603,10 @@ int drawable ic_baseline_add_24 0x7f080083
 int drawable ic_baseline_alert_24 0x7f080084
 int drawable ic_baseline_groups_24 0x7f080085
 int drawable ic_baseline_home_24 0x7f080086
+int drawable ic_baseline_list_alt_24 0x7f0800ce
 int drawable ic_baseline_message_24 0x7f0800cd
 int drawable ic_baseline_mms_36 0x7f080087
+int drawable ic_baseline_photo_library_24 0x7f0800cf
 int drawable ic_baseline_post_24 0x7f080088
 int drawable ic_baseline_post_add_36 0x7f080089
 int drawable ic_baseline_record_24 0x7f08008a
@@ -2684,6 +2686,7 @@ int id InputEmail 0x7f09024f
 int id InputPassword 0x7f090250
 int id InsertGroup 0x7f090008
 int id META 0x7f090009
+int id Modeswitch 0x7f090255
 int id MyText 0x7f09000a
 int id MyTitle 0x7f09000b
 int id NO_DEBUG 0x7f09000c
@@ -2704,6 +2707,8 @@ int id TOP_END 0x7f090019
 int id TOP_START 0x7f09001a
 int id TextInputLayout1 0x7f090251
 int id TextInputLayout2 0x7f090252
+int id TextViewDate 0x7f090256
+int id TextViewTime 0x7f090257
 int id Time 0x7f09001b
 int id abbreviationsBar 0x7f09001c
 int id accelerate 0x7f09001d
@@ -2808,6 +2813,8 @@ int id browser_actions_menu_view 0x7f09007d
 int id btnAddNewNote 0x7f09007e
 int id btnAddNewPost 0x7f090245
 int id btnSavePost 0x7f09024a
+int id btnSetDate 0x7f090258
+int id btnSetTime 0x7f090259
 int id btn_register 0x7f09007f
 int id button 0x7f090080
 int id button2 0x7f090081

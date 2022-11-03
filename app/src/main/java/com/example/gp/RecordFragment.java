@@ -48,7 +48,7 @@ public class RecordFragment extends Fragment {
         B = FragmentRecordBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("MemberData")
+        db.collection("Notes")
                 .document(Auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

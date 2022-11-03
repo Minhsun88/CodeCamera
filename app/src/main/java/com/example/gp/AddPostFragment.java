@@ -78,7 +78,7 @@ public class AddPostFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String Text = B.PostEdText.getText().toString();
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
                 String Time = format.format(new Date());
 
                 HashMap<String,Object> Posts = new HashMap<>();

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,10 +21,15 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Switch Modeswitch;
+
+  @NonNull
   public final CalendarView calendarView;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull CalendarView calendarView) {
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull Switch Modeswitch,
+      @NonNull CalendarView calendarView) {
     this.rootView = rootView;
+    this.Modeswitch = Modeswitch;
     this.calendarView = calendarView;
   }
 
@@ -54,13 +60,19 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Modeswitch;
+      Switch Modeswitch = ViewBindings.findChildViewById(rootView, id);
+      if (Modeswitch == null) {
+        break missingId;
+      }
+
       id = R.id.calendarView;
       CalendarView calendarView = ViewBindings.findChildViewById(rootView, id);
       if (calendarView == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((FrameLayout) rootView, calendarView);
+      return new FragmentHomeBinding((FrameLayout) rootView, Modeswitch, calendarView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
