@@ -20,6 +20,7 @@ import com.example.gp.databinding.FragmentAddNoteBinding;
 import com.example.gp.databinding.FragmentHomeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -62,10 +63,10 @@ public class HomeFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 for (QueryDocumentSnapshot doc : task.getResult()){
-                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-                                    String dateInString = doc.get("PostTimes").toString();
+                                    Timestamp ts = (Timestamp) doc.get("PostTimes");
+
                                     try {
-                                        Date date = sdf.parse(dateInString);
+                                        Date date = new Date(ts.getSeconds());
                                         Calendar calendar = Calendar.getInstance();
                                         calendar.setTime(date);
                                         event.add(new EventDay(calendar, R.drawable.ic_baseline_photo_library_24));

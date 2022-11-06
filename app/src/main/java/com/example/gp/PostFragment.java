@@ -3,6 +3,7 @@ package com.example.gp;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,18 +19,23 @@ import com.example.gp.databinding.FragmentPostBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PostFragment extends Fragment {
 
     private FragmentPostBinding B;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
-    ArrayList<String> arrayListPost = new ArrayList<>();
+    ArrayList<Post> arrayListPost = new ArrayList<Post>();
     PostAdapter adapter;
 
     @Override
@@ -43,26 +49,13 @@ public class PostFragment extends Fragment {
         B = FragmentPostBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("Posts")
-                .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful())
-                        {
-                            for (QueryDocumentSnapshot doc: task.getResult())
-                            {
-                                String PostId = doc.getId();
+        B.RecyclerView.setHasFixedSize(true);
+        B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                                arrayListPost.add(PostId);
-                            }
-                            adapter =new PostAdapter(getContext(),arrayListPost);
-                            B.RecyclerView.setAdapter(adapter);
-                            B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                        }
-                    }
-                });
+        adapter =new PostAdapter(getContext(),arrayListPost);
+        B.RecyclerView.setAdapter(adapter);
+        EventChangeListener();
+
 
         B.btnAddNewPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,5 +67,30 @@ public class PostFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void EventChangeListener() {
+                db.collection("Posts")
+                    .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
+                    .orderBy("PostTimes")
+                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                        if(error != null){
+                            Log.d("FireStore Error",error.getMessage());
+
+                            return;
+                        }
+                        for (DocumentChange doc: value.getDocumentChanges())
+                        {
+                            if(doc.getType() == DocumentChange.Type.ADDED){
+                                arrayListPost.add(doc.getDocument().toObject(Post.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                    }
+                });
     }
 }

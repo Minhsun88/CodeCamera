@@ -78,12 +78,10 @@ public class AddPostFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String Text = B.PostEdText.getText().toString();
-                SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-                String Time = format.format(new Date());
 
                 HashMap<String,Object> Posts = new HashMap<>();
                 Posts.put("PostTexts",Text);
-                Posts.put("PostTimes",Time);
+                Posts.put("PostTimes",new Date());
                 Posts.put("PostAuthor",Auth.getCurrentUser().getEmail());
                 Posts.put("PostPicCount",UriList.size());
                 db.collection("Posts")

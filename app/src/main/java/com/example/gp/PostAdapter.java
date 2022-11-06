@@ -3,6 +3,7 @@ package com.example.gp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,97 +37,85 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
-    Context mContext;
-    ArrayList<String> arrayListPost;
+    private Context mContext;
+    private ArrayList<Post> arrayListPost;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private StorageReference StorageRef = FirebaseStorage.getInstance().getReference();
+
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
 
-    public PostAdapter(Context mContext, ArrayList<String> arrayListPost) {
+    public PostAdapter(Context mContext, ArrayList<Post> arrayListPost) {
         this.mContext = mContext;
         this.arrayListPost = arrayListPost;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        View itemView = layoutInflater.inflate(R.layout.post_view,parent,false);
+    public PostAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.post_view,parent,false);
 
-        ViewHolder holder =  new ViewHolder(itemView);
-        holder.textViewName = itemView.findViewById(R.id.PostName);
-        holder.textViewTime = itemView.findViewById(R.id.PostTime);
-        holder.imageView = itemView.findViewById(R.id.PostImg);
-        holder.textViewText = itemView.findViewById(R.id.PostText);
-        holder.horizontalScrollView = itemView.findViewById(R.id.PostViewScrollView);
-        holder.linear = itemView.findViewById(R.id.PostViewLinear);
-
-        return holder;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        StorageReference StorageRef = FirebaseStorage.getInstance().getReference();
-
         holder.linear.removeAllViews();
 
-        db.collection("Posts")
-                .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()){
-                            db.collection("MemberData")
-                                    .document(Auth.getCurrentUser().getEmail())
-                                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    holder.textViewName.setText(task.getResult().get("name").toString());
-                                }
-                            });
+        Post post = arrayListPost.get(position);
+        String Text = post.PostTexts;
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        String Time = format.format(post.PostTimes);
+        String Id = post.docId;
+        long Count = post.PostPicCount;
 
-                            String Text = task.getResult().getDocuments().get(position).getString("PostTexts");
-                            String Time = task.getResult().getDocuments().get(position).getString("PostTimes");
+        db.collection("MemberData")
+            .document(Auth.getCurrentUser().getEmail())
+            .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                holder.textViewName.setText(task.getResult().get("name").toString());
+                }
+            });
 
-                            Log.d("AAAAA",task.getResult().getDocuments().get(position).get("PostPicCount").toString());
-                            holder.textViewText.setText(Text);
-                            holder.textViewTime.setText(Time);
 
-                            for (int i = 0 ; i < Integer.parseInt(task.getResult().getDocuments().get(position).get("PostPicCount").toString()) ; i++){
-                                StorageReference ref = StorageRef.child("PostImg").child(task.getResult().getDocuments().get(position).getId() + "_" + i);
-                                File file;
-                                try {
-                                    file = File.createTempFile("images","png");
-                                    ref.getFile(file)
-                                            .addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
-                                            ImageView imageView = new ImageView(mContext);
-                                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(500, 500);
-                                            imageView.setLayoutParams(params);
+        holder.textViewText.setText(Text);
+        holder.textViewTime.setText(Time);
 
-                                            Glide.with(mContext)
-                                                    .load(Uri.fromFile(file))
-                                                    .into(imageView);
+        for (int i = 0 ; i < Count ; i++){
+            StorageReference ref = StorageRef.child("PostImg").child(Id + "_" + i);
+            File file;
+            try {
+                file = File.createTempFile("images","png");
+                ref.getFile(file)
+                        .addOnCompleteListener(new OnCompleteListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<FileDownloadTask.TaskSnapshot> task) {
+                                ImageView imageView = new ImageView(mContext);
+                                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(500, 500);
+                                imageView.setLayoutParams(params);
 
-                                            holder.linear.addView(imageView);
-                                        }
-                                    });
-                                }catch (Exception e){
-                                    Log.d("AAAAA",e.getMessage());
-                                }
+                                Glide.with(mContext)
+                                        .load(Uri.fromFile(file))
+                                        .into(imageView);
+
+                                holder.linear.addView(imageView);
                             }
-                        }
-                    }
-                });
+                        });
+            }catch (Exception e){
+                Log.d("AAAAA",e.getMessage());
+            }
+        }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 int id = holder.getAdapterPosition();
+                Post post = arrayListPost.get(id);
 
                 new AlertDialog.Builder(mContext)
                         .setTitle("刪除確認")
@@ -135,13 +124,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 db.collection("Posts")
-                                        .document(arrayListPost.get(id))
+                                        .document(post.docId)
                                         .get()
                                         .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                             @Override
                                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                                 for (int i = 0 ; i < Integer.parseInt(task.getResult().get("PostPicCount").toString()) ; i++){
-                                                    StorageReference ref = StorageRef.child("PostImg").child(arrayListPost.get(id) + "_" + i);
+                                                    StorageReference ref = StorageRef.child("PostImg").child(post.docId + "_" + i);
 
                                                     ref.delete()
                                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -159,7 +148,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                                                 }
 
                                                 db.collection("Posts")
-                                                        .document(arrayListPost.get(id))
+                                                        .document(post.docId)
                                                         .delete()
                                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
@@ -198,6 +187,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            textViewName = itemView.findViewById(R.id.PostName);
+            textViewTime = itemView.findViewById(R.id.PostTime);
+            imageView = itemView.findViewById(R.id.PostImg);
+            textViewText = itemView.findViewById(R.id.PostText);
+            horizontalScrollView = itemView.findViewById(R.id.PostViewScrollView);
+            linear = itemView.findViewById(R.id.PostViewLinear);
         }
     }
 }
