@@ -42,11 +42,6 @@ public class AddNoteFragment extends Fragment {
     DatePickerDialog.OnDateSetListener datePicker;
     Calendar calendar = Calendar.getInstance();
 
-    private ArrayList TitleList = new ArrayList();
-    private ArrayList TextList = new ArrayList();
-    private ArrayList TimeList = new ArrayList();
-    private ArrayList DateList = new ArrayList();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,64 +54,45 @@ public class AddNoteFragment extends Fragment {
         B = FragmentAddNoteBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("Notes").document(Auth.getCurrentUser().getEmail()).
-                get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        if(     document.get("NoteTitles") != null &&
-                                document.get("NoteTexts") != null &&
-                                document.get("NoteDates") != null &&
-                                document.get("NoteTimes") != null ) {
-                            TitleList = (ArrayList) document.get("NoteTitles");
-                            TextList = (ArrayList) document.get("NoteTexts");
-                            TimeList = (ArrayList) document.get("NoteTimes");
-                            DateList = (ArrayList) document.get("NoteDates");
-                        }
-                    } else {
-                        Log.d("AAAAA","沒資料");
-                    }
-                } else {
-                    Log.d("AAAAA",task.getException().toString());
-                }
-            }
-        });
-
         B.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
+                    SimpleDateFormat formatDT = new SimpleDateFormat("yyyy/MM/ddHH:mm");
+                    formatDT.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
+
                     String Title = B.edTitle.getText().toString();
                     String Text = B.edText.getText().toString();
+                    String Date,Time;
 
-                    TitleList.add(Title);
-                    TextList.add(Text);
+
                     if(B.TextViewDate.getText().toString() == ""){
                         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
                         format.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
 
-                        DateList.add(format.format(new Date()));
+                        Date = format.format(new Date());
                     }else {
-                        DateList.add(B.TextViewTime.getText().toString().substring(5));
+                        Date = B.TextViewDate.getText().toString().substring(5);
                     }
                     if(B.TextViewTime.getText().toString() == ""){
                         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
                         format.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
 
-                        TimeList.add(format.format(new Date()));
+                        Time = format.format(new Date());
                     }else {
-                        TimeList.add(B.TextViewTime.getText().toString().substring(5));
+                        Time = B.TextViewTime.getText().toString().substring(5);
                     }
+
+                    Date date = formatDT.parse(Date+Time);
+
                     HashMap<String, Object> Notes = new HashMap<>();
-                    Notes.put("NoteTitles", TitleList);
-                    Notes.put("NoteTexts", TextList);
-                    Notes.put("NoteDates", DateList);
-                    Notes.put("NoteTimes", TimeList);
+                    Notes.put("NoteTitles", Title);
+                    Notes.put("NoteTexts", Text);
+                    Notes.put("NoteTimes", date);
+                    Notes.put("NoteAuthor",Auth.getCurrentUser().getEmail());
+
                     db.collection("Notes")
-                            .document(Auth.getCurrentUser().getEmail())
-                            .update(Notes);
+                            .add(Notes);
                 }catch (Exception e){
                     Log.d("AAAAA",e.getMessage());
                 }
@@ -135,11 +111,18 @@ public class AddNoteFragment extends Fragment {
                 new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int HH, int mm) {
-                        if(mm >= 0 && mm < 10){
-                            B.TextViewTime.setText("時間 : "+HH + ":0"+mm);
-                        }else{
-                            B.TextViewTime.setText("時間 : "+HH + ":"+mm);
+                        String timeS;
+                        if(HH >= 0 && HH < 10){
+                            timeS = "時間 : " + "0" + HH;
+                        }else {
+                            timeS = "時間 : " + HH;
                         }
+                        if(mm >= 0 && mm < 10){
+                            timeS += ":0"+mm;
+                        }else{
+                            timeS += ":"+mm;
+                        }
+                        B.TextViewTime.setText(timeS);
                     }
                 },hour,minute,true).show();
             }

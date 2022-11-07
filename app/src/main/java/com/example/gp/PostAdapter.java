@@ -44,9 +44,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     private Context mContext;
     private ArrayList<Post> arrayListPost;
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private StorageReference StorageRef = FirebaseStorage.getInstance().getReference();
-
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
 
     public PostAdapter(Context mContext, ArrayList<Post> arrayListPost) {
@@ -123,47 +123,39 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                         .setPositiveButton("確認", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                for (int j = 0 ; j < Count ; j++){
+                                    StorageReference ref = StorageRef.child("PostImg").child(post.docId + "_" + j);
+
+                                    ref.delete()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    Log.d("AAAAA","刪除照片成功");
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.d("AAAAA","刪除照片失敗");
+                                                }
+                                            });
+                                }
+
                                 db.collection("Posts")
                                         .document(post.docId)
-                                        .get()
-                                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        .delete()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
-                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                for (int i = 0 ; i < Integer.parseInt(task.getResult().get("PostPicCount").toString()) ; i++){
-                                                    StorageReference ref = StorageRef.child("PostImg").child(post.docId + "_" + i);
-
-                                                    ref.delete()
-                                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                                @Override
-                                                                public void onComplete(@NonNull Task<Void> task) {
-                                                                    Log.d("AAAAA","刪除照片成功");
-                                                                }
-                                                            })
-                                                            .addOnFailureListener(new OnFailureListener() {
-                                                                @Override
-                                                                public void onFailure(@NonNull Exception e) {
-                                                                    Log.d("AAAAA","刪除照片失敗");
-                                                                }
-                                                            });
-                                                }
-
-                                                db.collection("Posts")
-                                                        .document(post.docId)
-                                                        .delete()
-                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task<Void> task) {
-                                                                arrayListPost.remove(id); //從products中移除該項目
-                                                                notifyItemRemoved(id); //通知移除item
-                                                                notifyItemRangeChanged(0,arrayListPost.size()); //刷新項目
-                                                            }
-                                                        })
-                                                        .addOnFailureListener(new OnFailureListener() {
-                                                            @Override
-                                                            public void onFailure(@NonNull Exception e) {
-                                                                Log.d("AAAAA","刪除貼文失敗");
-                                                            }
-                                                        });
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                arrayListPost.remove(id); //從products中移除該項目
+                                                notifyItemRemoved(id); //通知移除item
+                                                notifyItemRangeChanged(0,arrayListPost.size()); //刷新項目
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("AAAAA","刪除貼文失敗");
                                             }
                                         });
                             }

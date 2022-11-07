@@ -38,6 +38,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -46,8 +47,6 @@ public class AddPostFragment extends Fragment {
     private StorageReference StorageRef;
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private ArrayList TextList = new ArrayList();
-    private ArrayList TimeList = new ArrayList();
     private ArrayList UriList = new ArrayList();
 
 
@@ -78,10 +77,11 @@ public class AddPostFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String Text = B.PostEdText.getText().toString();
+                Calendar calendar= Calendar.getInstance();
 
                 HashMap<String,Object> Posts = new HashMap<>();
                 Posts.put("PostTexts",Text);
-                Posts.put("PostTimes",new Date());
+                Posts.put("PostTimes",calendar.getTime());
                 Posts.put("PostAuthor",Auth.getCurrentUser().getEmail());
                 Posts.put("PostPicCount",UriList.size());
                 db.collection("Posts")

@@ -19,8 +19,11 @@ import com.example.gp.databinding.FragmentRecordBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -32,8 +35,7 @@ public class RecordFragment extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
 
-    private ArrayList TitleList = new ArrayList();
-    ArrayList<String> arrayList = new ArrayList<>();
+    ArrayList<Note> arrayListNote = new ArrayList<Note>();
     NoteAdapter adapter;
 
     @Override
@@ -48,31 +50,12 @@ public class RecordFragment extends Fragment {
         B = FragmentRecordBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
-        db.collection("Notes")
-                .document(Auth.getCurrentUser().getEmail())
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                try{
-                                    TitleList = (ArrayList) document.get("NoteTitles");
+        B.RecyclerView.setHasFixedSize(true);
+        B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                                    for(int i = 0 ;i < TitleList.size(); i++){
-                                        arrayList.add(TitleList.get(i).toString());
-                                    }
-                                    adapter =new NoteAdapter(getContext(),arrayList);
-                                    B.RecyclerView.setAdapter(adapter);
-                                    B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                                } catch (Exception e){
-                                    Log.d("AAAAA",e.getMessage());
-                                }
-                            }
-                        }
-                    }
-                });
+        adapter =new NoteAdapter(getContext(),arrayListNote);
+        B.RecyclerView.setAdapter(adapter);
+        EventChangeListener();
 
         B.btnAddNewNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +67,30 @@ public class RecordFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void EventChangeListener() {
+        db.collection("Notes")
+                .whereEqualTo("NoteAuthor", Auth.getCurrentUser().getEmail())
+                .orderBy("NoteTimes")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                        if(error != null){
+                            Log.d("FireStore Error",error.getMessage());
+
+                            return;
+                        }
+                        for (DocumentChange doc: value.getDocumentChanges())
+                        {
+                            if(doc.getType() == DocumentChange.Type.ADDED){
+                                arrayListNote.add(doc.getDocument().toObject(Note.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                    }
+                });
     }
 }

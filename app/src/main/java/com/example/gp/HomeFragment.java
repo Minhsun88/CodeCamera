@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
                                     Timestamp ts = (Timestamp) doc.get("PostTimes");
 
                                     try {
-                                        Date date = new Date(ts.getSeconds());
+                                        Date date = ts.toDate();
                                         Calendar calendar = Calendar.getInstance();
                                         calendar.setTime(date);
                                         event.add(new EventDay(calendar, R.drawable.ic_baseline_photo_library_24));
@@ -89,30 +89,26 @@ public class HomeFragment extends Fragment {
                 if(b){
                     try {
                         List<EventDay> event = new ArrayList<>();
-                        B.calendarView.setEvents(event);
 
                         db.collection("Notes")
-                                .document(Auth.getCurrentUser().getEmail())
+                                .whereEqualTo("NoteAuthor",Auth.getCurrentUser().getEmail())
                                 .get()
-                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                     @Override
-                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                        DocumentSnapshot doc = task.getResult();
-                                        try {
-                                            TimeList = (ArrayList) doc.get("NoteDates");
-                                            for(int i = 0 ; i < TimeList.size() ; i++){
-                                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-                                                Date date = sdf.parse(TimeList.get(i));
-                                                Calendar calendar = Calendar.getInstance();
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        for (QueryDocumentSnapshot doc : task.getResult()){
+                                            Timestamp ts = (Timestamp) doc.get("NoteTimes");
 
+                                            try {
+                                                Date date = ts.toDate();
+                                                Calendar calendar = Calendar.getInstance();
                                                 calendar.setTime(date);
                                                 event.add(new EventDay(calendar, R.drawable.ic_baseline_list_alt_24));
+                                            } catch (Exception e){
+                                                Log.d("AAAAA",e.getMessage());
                                             }
-
-                                            B.calendarView.setEvents(event);
-                                        } catch (Exception e){
-                                            Log.d("AAAAA",e.getMessage());
                                         }
+                                        B.calendarView.setEvents(event);
                                     }
                                 });
                     } catch (Exception e){
@@ -121,7 +117,6 @@ public class HomeFragment extends Fragment {
                 } else {
                     try {
                         List<EventDay> event = new ArrayList<>();
-                        B.calendarView.setEvents(event);
 
                         db.collection("Posts")
                                 .whereEqualTo("PostAuthor",Auth.getCurrentUser().getEmail())
@@ -130,10 +125,10 @@ public class HomeFragment extends Fragment {
                                     @Override
                                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                         for (QueryDocumentSnapshot doc : task.getResult()){
-                                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-                                            String dateInString = doc.get("PostTimes").toString();
+                                            Timestamp ts = (Timestamp) doc.get("PostTimes");
+
                                             try {
-                                                Date date = sdf.parse(dateInString);
+                                                Date date = ts.toDate();
                                                 Calendar calendar = Calendar.getInstance();
                                                 calendar.setTime(date);
                                                 event.add(new EventDay(calendar, R.drawable.ic_baseline_photo_library_24));
@@ -150,33 +145,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-//        B.calendarView.setOnDayClickListener(new OnDayClickListener() {
-//            @Override
-//            public void onDayClick(EventDay eventDay) {
-//                event.add(new EventDay(eventDay.getCalendar(), R.drawable.ic_baseline_message_24));
-//                try {
-//                    Log.d("AAAAA",event.toString());
-//                    B.calendarView.setEvents(event);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//        Date date = new Date();
-//        Calendar calendar = Calendar.getInstance();
-//        SimpleDateFormat sdfY = new SimpleDateFormat("yyyy");
-//        SimpleDateFormat sdfM = new SimpleDateFormat("MM");
-//        SimpleDateFormat sdfD = new SimpleDateFormat("dd");
-//        /**calender設置為今日*/
-//        calendar.set(Integer.parseInt(sdfY.format(date))
-//                , Integer.parseInt(sdfM.format(date)) - 1
-//                , Integer.parseInt(sdfD.format(date)));
-//        try {
-//                    B.calendarView.setEvents(event);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
         return view;
     }
 
