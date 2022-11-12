@@ -57,15 +57,6 @@ public class RecordFragment extends Fragment {
         B.RecyclerView.setAdapter(adapter);
         EventChangeListener();
 
-        B.btnAddNewNote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout,new AddNoteFragment());
-                fragmentTransaction.commit();
-            }
-        });
-
         return view;
     }
 

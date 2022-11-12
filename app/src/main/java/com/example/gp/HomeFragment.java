@@ -168,7 +168,9 @@ public class HomeFragment extends Fragment {
                 (note -> ListGetting(note.NoteTimes, event, R.drawable.ic_baseline_list_alt_24)
                 ));
 
-        B.calendarView.setEvents(event);B.calendarView.setOnDayClickListener(new OnDayClickListener() {
+        B.calendarView.setEvents(event);
+
+        B.calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(EventDay eventDay) {
                 final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item);

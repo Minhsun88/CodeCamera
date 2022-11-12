@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,16 +19,13 @@ import java.lang.String;
 
 public final class FragmentAddNoteBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextView TextViewDate;
 
   @NonNull
   public final TextView TextViewTime;
-
-  @NonNull
-  public final Button btnSetDate;
 
   @NonNull
   public final Button btnSetTime;
@@ -45,14 +42,12 @@ public final class FragmentAddNoteBinding implements ViewBinding {
   @NonNull
   public final TextView textViewTitle;
 
-  private FragmentAddNoteBinding(@NonNull LinearLayout rootView, @NonNull TextView TextViewDate,
-      @NonNull TextView TextViewTime, @NonNull Button btnSetDate, @NonNull Button btnSetTime,
-      @NonNull Button buttonSave, @NonNull EditText edText, @NonNull EditText edTitle,
-      @NonNull TextView textViewTitle) {
+  private FragmentAddNoteBinding(@NonNull ScrollView rootView, @NonNull TextView TextViewDate,
+      @NonNull TextView TextViewTime, @NonNull Button btnSetTime, @NonNull Button buttonSave,
+      @NonNull EditText edText, @NonNull EditText edTitle, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
     this.TextViewDate = TextViewDate;
     this.TextViewTime = TextViewTime;
-    this.btnSetDate = btnSetDate;
     this.btnSetTime = btnSetTime;
     this.buttonSave = buttonSave;
     this.edText = edText;
@@ -62,7 +57,7 @@ public final class FragmentAddNoteBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -99,12 +94,6 @@ public final class FragmentAddNoteBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnSetDate;
-      Button btnSetDate = ViewBindings.findChildViewById(rootView, id);
-      if (btnSetDate == null) {
-        break missingId;
-      }
-
       id = R.id.btnSetTime;
       Button btnSetTime = ViewBindings.findChildViewById(rootView, id);
       if (btnSetTime == null) {
@@ -135,8 +124,8 @@ public final class FragmentAddNoteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAddNoteBinding((LinearLayout) rootView, TextViewDate, TextViewTime,
-          btnSetDate, btnSetTime, buttonSave, edText, edTitle, textViewTitle);
+      return new FragmentAddNoteBinding((ScrollView) rootView, TextViewDate, TextViewTime,
+          btnSetTime, buttonSave, edText, edTitle, textViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

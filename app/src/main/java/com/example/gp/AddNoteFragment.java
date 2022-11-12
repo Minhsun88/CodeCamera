@@ -134,17 +134,6 @@ public class AddNoteFragment extends Fragment {
             }
         };
 
-        B.btnSetDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatePickerDialog dialog = new DatePickerDialog(getContext(),datePicker,
-                        calendar.get(Calendar.YEAR),
-                        calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH));
-                dialog.show();
-            }
-        });
-
         return view;
     }
 

@@ -4,7 +4,6 @@ package com.example.gp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,16 +24,12 @@ public final class FragmentRecordBinding implements ViewBinding {
   public final RecyclerView RecyclerView;
 
   @NonNull
-  public final Button btnAddNewNote;
-
-  @NonNull
   public final TextView textView3;
 
   private FragmentRecordBinding(@NonNull FrameLayout rootView, @NonNull RecyclerView RecyclerView,
-      @NonNull Button btnAddNewNote, @NonNull TextView textView3) {
+      @NonNull TextView textView3) {
     this.rootView = rootView;
     this.RecyclerView = RecyclerView;
-    this.btnAddNewNote = btnAddNewNote;
     this.textView3 = textView3;
   }
 
@@ -71,20 +66,13 @@ public final class FragmentRecordBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnAddNewNote;
-      Button btnAddNewNote = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddNewNote == null) {
-        break missingId;
-      }
-
       id = R.id.textView3;
       TextView textView3 = ViewBindings.findChildViewById(rootView, id);
       if (textView3 == null) {
         break missingId;
       }
 
-      return new FragmentRecordBinding((FrameLayout) rootView, RecyclerView, btnAddNewNote,
-          textView3);
+      return new FragmentRecordBinding((FrameLayout) rootView, RecyclerView, textView3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

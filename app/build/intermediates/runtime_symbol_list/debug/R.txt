@@ -2820,9 +2820,7 @@ int id browser_actions_menu_item_icon 0x7f09007a
 int id browser_actions_menu_item_text 0x7f09007b
 int id browser_actions_menu_items 0x7f09007c
 int id browser_actions_menu_view 0x7f09007d
-int id btnAddNewNote 0x7f09007e
 int id btnSavePost 0x7f09024a
-int id btnSetDate 0x7f090258
 int id btnSetTime 0x7f090259
 int id btn_register 0x7f09007f
 int id button 0x7f090080
