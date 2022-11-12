@@ -56,16 +56,6 @@ public class PostFragment extends Fragment {
         B.RecyclerView.setAdapter(adapter);
         EventChangeListener();
 
-
-        B.btnAddNewPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout,new AddPostFragment());
-                fragmentTransaction.commit();
-            }
-        });
-
         return view;
     }
 

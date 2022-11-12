@@ -74,14 +74,24 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         long Count = post.PostPicCount;
 
         db.collection("MemberData")
-            .document(Auth.getCurrentUser().getEmail())
-            .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                .document(Auth.getCurrentUser().getEmail())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 holder.textViewName.setText(task.getResult().get("name").toString());
-                }
-            });
-
+            }
+        });
+        //大頭貼
+        StorageRef.child("RegisterImg").child(Auth.getCurrentUser().getEmail())
+                .getDownloadUrl()
+                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Glide.with(mContext)
+                                .load(uri)
+                                .into(holder.imageView);
+                    }
+                });
 
         holder.textViewText.setText(Text);
         holder.textViewTime.setText(Time);

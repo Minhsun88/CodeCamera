@@ -274,6 +274,10 @@ int attr circularflow_defaultAngle 0x7f0400c6
 int attr circularflow_defaultRadius 0x7f0400c7
 int attr circularflow_radiusInDP 0x7f0400c8
 int attr circularflow_viewCenter 0x7f0400c9
+int attr civ_border_color 0x7f040491
+int attr civ_border_overlay 0x7f040492
+int attr civ_border_width 0x7f040493
+int attr civ_circle_background_color 0x7f040494
 int attr clearTop 0x7f0400ca
 int attr clearsTag 0x7f0400cb
 int attr clickAction 0x7f0400cc
@@ -2555,6 +2559,8 @@ int drawable abc_vector_test 0x7f080055
 int drawable avd_hide_password 0x7f080056
 int drawable avd_show_password 0x7f080057
 int drawable background 0x7f0800cc
+int drawable background2 0x7f0800d0
+int drawable background3 0x7f0800d1
 int drawable background_color_circle_selector 0x7f080058
 int drawable background_transparent 0x7f080059
 int drawable baseline_person_black_36 0x7f08005a
@@ -2682,6 +2688,7 @@ int id BOTTOM_START 0x7f090004
 int id CTRL 0x7f090005
 int id FUNCTION 0x7f090006
 int id GroupName 0x7f090007
+int id ImageView 0x7f09025a
 int id InputEmail 0x7f09024f
 int id InputPassword 0x7f090250
 int id InsertGroup 0x7f090008
@@ -2703,10 +2710,13 @@ int id SHOW_ALL 0x7f090015
 int id SHOW_PATH 0x7f090016
 int id SHOW_PROGRESS 0x7f090017
 int id SYM 0x7f090018
+int id SignOut 0x7f09025b
 int id TOP_END 0x7f090019
 int id TOP_START 0x7f09001a
 int id TextInputLayout1 0x7f090251
 int id TextInputLayout2 0x7f090252
+int id TextInputLayout3 0x7f09025c
+int id TextInputLayout4 0x7f09025d
 int id TextViewDate 0x7f090256
 int id TextViewTime 0x7f090257
 int id Time 0x7f09001b
@@ -2811,7 +2821,6 @@ int id browser_actions_menu_item_text 0x7f09007b
 int id browser_actions_menu_items 0x7f09007c
 int id browser_actions_menu_view 0x7f09007d
 int id btnAddNewNote 0x7f09007e
-int id btnAddNewPost 0x7f090245
 int id btnSavePost 0x7f09024a
 int id btnSetDate 0x7f090258
 int id btnSetTime 0x7f090259
@@ -2972,6 +2981,7 @@ int id ifRoom 0x7f090118
 int id ignore 0x7f090119
 int id ignoreRequest 0x7f09011a
 int id image 0x7f09011b
+int id imageView 0x7f09025e
 int id immediateStop 0x7f09011c
 int id included 0x7f09011d
 int id info 0x7f09011e
@@ -3213,7 +3223,6 @@ int id textSpacerNoButtons 0x7f090206
 int id textSpacerNoTitle 0x7f090207
 int id textStart 0x7f090208
 int id textTop 0x7f090209
-int id textView 0x7f09020a
 int id textView2 0x7f09020c
 int id textView3 0x7f09020d
 int id textViewName 0x7f09024b
@@ -5155,6 +5164,11 @@ int styleable ChipGroup_chipSpacingVertical 3
 int styleable ChipGroup_selectionRequired 4
 int styleable ChipGroup_singleLine 5
 int styleable ChipGroup_singleSelection 6
+int[] styleable CircleImageView { 0x7f040491, 0x7f040492, 0x7f040493, 0x7f040494 }
+int styleable CircleImageView_civ_border_color 0
+int styleable CircleImageView_civ_border_overlay 1
+int styleable CircleImageView_civ_border_width 2
+int styleable CircleImageView_civ_circle_background_color 3
 int[] styleable CircularProgressIndicator { 0x7f040213, 0x7f040215, 0x7f040216 }
 int styleable CircularProgressIndicator_indicatorDirectionCircular 0
 int styleable CircularProgressIndicator_indicatorInset 1

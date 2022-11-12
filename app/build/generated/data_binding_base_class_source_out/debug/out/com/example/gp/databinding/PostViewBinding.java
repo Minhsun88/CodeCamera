@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -14,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,7 +23,7 @@ public final class PostViewBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView PostImg;
+  public final CircleImageView PostImg;
 
   @NonNull
   public final TextView PostName;
@@ -40,7 +40,7 @@ public final class PostViewBinding implements ViewBinding {
   @NonNull
   public final HorizontalScrollView PostViewScrollView;
 
-  private PostViewBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView PostImg,
+  private PostViewBinding(@NonNull ConstraintLayout rootView, @NonNull CircleImageView PostImg,
       @NonNull TextView PostName, @NonNull TextView PostText, @NonNull TextView PostTime,
       @NonNull LinearLayout PostViewLinear, @NonNull HorizontalScrollView PostViewScrollView) {
     this.rootView = rootView;
@@ -80,7 +80,7 @@ public final class PostViewBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.PostImg;
-      ImageView PostImg = ViewBindings.findChildViewById(rootView, id);
+      CircleImageView PostImg = ViewBindings.findChildViewById(rootView, id);
       if (PostImg == null) {
         break missingId;
       }

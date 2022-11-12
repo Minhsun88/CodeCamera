@@ -54,6 +54,9 @@ public class AddNoteFragment extends Fragment {
         B = FragmentAddNoteBinding.inflate(inflater,container,false);
         View view = B.getRoot();
 
+        Bundle bundle=getArguments();
+        String selectedDate=bundle.getString("Date");
+
         B.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,17 +66,8 @@ public class AddNoteFragment extends Fragment {
 
                     String Title = B.edTitle.getText().toString();
                     String Text = B.edText.getText().toString();
-                    String Date,Time;
+                    String Time;
 
-
-                    if(B.TextViewDate.getText().toString() == ""){
-                        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-                        format.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
-
-                        Date = format.format(new Date());
-                    }else {
-                        Date = B.TextViewDate.getText().toString().substring(5);
-                    }
                     if(B.TextViewTime.getText().toString() == ""){
                         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
                         format.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
@@ -83,7 +77,7 @@ public class AddNoteFragment extends Fragment {
                         Time = B.TextViewTime.getText().toString().substring(5);
                     }
 
-                    Date date = formatDT.parse(Date+Time);
+                    Date date = formatDT.parse(selectedDate+Time);
 
                     HashMap<String, Object> Notes = new HashMap<>();
                     Notes.put("NoteTitles", Title);
@@ -97,7 +91,7 @@ public class AddNoteFragment extends Fragment {
                     Log.d("AAAAA",e.getMessage());
                 }
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout,new RecordFragment());
+                fragmentTransaction.replace(R.id.frame_layout,new HomeFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -127,7 +121,7 @@ public class AddNoteFragment extends Fragment {
                 },hour,minute,true).show();
             }
         });
-        //日期
+
         datePicker = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -139,7 +133,7 @@ public class AddNoteFragment extends Fragment {
                 B.TextViewDate.setText("日期 : " + sdf.format(calendar.getTime()));
             }
         };
-        //日期
+
         B.btnSetDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

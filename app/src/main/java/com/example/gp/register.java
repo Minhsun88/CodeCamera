@@ -1,23 +1,32 @@
 package com.example.gp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.gp.databinding.ActivityMainBinding;
 import com.example.gp.databinding.ActivityRegisterBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 
@@ -25,6 +34,7 @@ public class register extends AppCompatActivity {
     private ActivityRegisterBinding binding;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private StorageReference StorageRef = FirebaseStorage.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,19 @@ public class register extends AppCompatActivity {
             }
         });
 
+        binding.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (binding.edTAccount.getText().toString().isEmpty() == false) {
+                    Intent it = new Intent(Intent.ACTION_GET_CONTENT);
+                    it.setType("image/*");
+                    startActivityForResult(it, 101);
+                }else {
+                    Toast.makeText(register.this,"請輸入帳號",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,8 +70,6 @@ public class register extends AppCompatActivity {
                     String email = binding.edTAccount.getText().toString();
                     String pwd = binding.edTPassword.getText().toString();
                     String name = binding.edTName.getText().toString();
-
-                    
 
                     /* check if user exist */
                     mAuth.createUserWithEmailAndPassword(email,pwd)
@@ -127,5 +148,33 @@ public class register extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String Email = binding.edTAccount.getText().toString();
+        if ( requestCode == 101 && resultCode == RESULT_OK){
+            Uri uri = data.getData();
+            Glide.with(register.this)
+                    .load(uri)
+                    .into(binding.imageView);
+
+            //大頭貼存入DB
+            StorageRef.child("RegisterImg").child(Email)
+                    .putFile(uri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Log.d("TAG","上傳成功");
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("TAG",e.getMessage());
+                        }
+                    });
+        }
     }
 }

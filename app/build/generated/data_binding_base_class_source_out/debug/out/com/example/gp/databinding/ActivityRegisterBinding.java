@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,36 +24,56 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextInputLayout TextInputLayout1;
+
+  @NonNull
+  public final TextInputLayout TextInputLayout2;
+
+  @NonNull
+  public final TextInputLayout TextInputLayout3;
+
+  @NonNull
+  public final TextInputLayout TextInputLayout4;
+
+  @NonNull
   public final Button btnRegister;
 
   @NonNull
-  public final EditText edTAccount;
+  public final TextInputEditText edTAccount;
 
   @NonNull
-  public final EditText edTName;
+  public final TextInputEditText edTName;
 
   @NonNull
-  public final EditText edTPassword;
+  public final TextInputEditText edTPassword;
 
   @NonNull
-  public final EditText edTPassword2;
+  public final TextInputEditText edTPassword2;
 
   @NonNull
-  public final TextView textView;
+  public final ImageView imageView;
 
   @NonNull
   public final TextView textView2;
 
-  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnRegister,
-      @NonNull EditText edTAccount, @NonNull EditText edTName, @NonNull EditText edTPassword,
-      @NonNull EditText edTPassword2, @NonNull TextView textView, @NonNull TextView textView2) {
+  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView,
+      @NonNull TextInputLayout TextInputLayout1, @NonNull TextInputLayout TextInputLayout2,
+      @NonNull TextInputLayout TextInputLayout3, @NonNull TextInputLayout TextInputLayout4,
+      @NonNull Button btnRegister, @NonNull TextInputEditText edTAccount,
+      @NonNull TextInputEditText edTName, @NonNull TextInputEditText edTPassword,
+      @NonNull TextInputEditText edTPassword2, @NonNull ImageView imageView,
+      @NonNull TextView textView2) {
     this.rootView = rootView;
+    this.TextInputLayout1 = TextInputLayout1;
+    this.TextInputLayout2 = TextInputLayout2;
+    this.TextInputLayout3 = TextInputLayout3;
+    this.TextInputLayout4 = TextInputLayout4;
     this.btnRegister = btnRegister;
     this.edTAccount = edTAccount;
     this.edTName = edTName;
     this.edTPassword = edTPassword;
     this.edTPassword2 = edTPassword2;
-    this.textView = textView;
+    this.imageView = imageView;
     this.textView2 = textView2;
   }
 
@@ -82,6 +104,30 @@ public final class ActivityRegisterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.TextInputLayout1;
+      TextInputLayout TextInputLayout1 = ViewBindings.findChildViewById(rootView, id);
+      if (TextInputLayout1 == null) {
+        break missingId;
+      }
+
+      id = R.id.TextInputLayout2;
+      TextInputLayout TextInputLayout2 = ViewBindings.findChildViewById(rootView, id);
+      if (TextInputLayout2 == null) {
+        break missingId;
+      }
+
+      id = R.id.TextInputLayout3;
+      TextInputLayout TextInputLayout3 = ViewBindings.findChildViewById(rootView, id);
+      if (TextInputLayout3 == null) {
+        break missingId;
+      }
+
+      id = R.id.TextInputLayout4;
+      TextInputLayout TextInputLayout4 = ViewBindings.findChildViewById(rootView, id);
+      if (TextInputLayout4 == null) {
+        break missingId;
+      }
+
       id = R.id.btn_register;
       Button btnRegister = ViewBindings.findChildViewById(rootView, id);
       if (btnRegister == null) {
@@ -89,32 +135,32 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       id = R.id.edT_account;
-      EditText edTAccount = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edTAccount = ViewBindings.findChildViewById(rootView, id);
       if (edTAccount == null) {
         break missingId;
       }
 
       id = R.id.edT_name;
-      EditText edTName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edTName = ViewBindings.findChildViewById(rootView, id);
       if (edTName == null) {
         break missingId;
       }
 
       id = R.id.edT_password;
-      EditText edTPassword = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edTPassword = ViewBindings.findChildViewById(rootView, id);
       if (edTPassword == null) {
         break missingId;
       }
 
       id = R.id.edT_password2;
-      EditText edTPassword2 = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText edTPassword2 = ViewBindings.findChildViewById(rootView, id);
       if (edTPassword2 == null) {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
         break missingId;
       }
 
@@ -124,8 +170,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ConstraintLayout) rootView, btnRegister, edTAccount,
-          edTName, edTPassword, edTPassword2, textView, textView2);
+      return new ActivityRegisterBinding((ConstraintLayout) rootView, TextInputLayout1,
+          TextInputLayout2, TextInputLayout3, TextInputLayout4, btnRegister, edTAccount, edTName,
+          edTPassword, edTPassword2, imageView, textView2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

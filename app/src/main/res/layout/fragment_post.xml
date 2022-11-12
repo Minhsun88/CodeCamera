@@ -20,6 +20,7 @@
             android:gravity="center"
             android:text="貼文區"
             android:textSize="30dp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +30,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="630dp"
             android:layout_marginTop="0pt"
             android:background="#00BCD4"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,18 +38,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/PostName" />
 
-        <Button
-            android:id="@+id/btnAddNewPost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mylinearlayout"
-            android:text="Add New Post"
-            android:textColor="#00BCD4"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RecyclerView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

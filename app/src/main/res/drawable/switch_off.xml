@@ -7,7 +7,7 @@
         android:end="@dimen/switch_padding"
         android:gravity="center_vertical|fill_horizontal">
         <shape>
-            <solid android:color="#F33877"/>
+            <solid android:color="#381F51"/>
             <corners android:radius="@dimen/switch_radius"/>
             <size android:height="@dimen/switch_size"/>
         </shape>

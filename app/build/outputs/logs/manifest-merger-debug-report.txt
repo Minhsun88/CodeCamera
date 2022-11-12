@@ -16,6 +16,7 @@ MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\a3384\.gradle
 MERGED from [androidx.navigation:navigation-fragment:2.5.2] C:\Users\a3384\.gradle\caches\transforms-3\8e2b31168e3fdc531cfdc779b75eada1\transformed\navigation-fragment-2.5.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\426c450c0b87b08513484191a4ca1f9a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\a3384\.gradle\caches\transforms-3\11f819c9aa55fb34b4fa345b7195953c\transformed\jetified-glide-4.13.0\AndroidManifest.xml:2:1-12:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\a3384\.gradle\caches\transforms-3\a6773bbb6b36f5dda931c33dffacd3f7\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\68510c080e507e6530ef66e866bccd76\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\09d1ae61f1150d4587952c9e5a766e55\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.4.2] C:\Users\a3384\.gradle\caches\transforms-3\7536a59909d5504e19c69d7623729ce0\transformed\jetified-appcompat-resources-1.4.2\AndroidManifest.xml:17:1-24:12
@@ -113,6 +114,8 @@ MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\a3384\.gradle
 MERGED from [com.google.firebase:firebase-storage:20.0.1] C:\Users\a3384\.gradle\caches\transforms-3\0d54a2580254be5df284f35857fa9553\transformed\jetified-firebase-storage-20.0.1\AndroidManifest.xml:29:5-37:19
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\a3384\.gradle\caches\transforms-3\11f819c9aa55fb34b4fa345b7195953c\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\a3384\.gradle\caches\transforms-3\11f819c9aa55fb34b4fa345b7195953c\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\a3384\.gradle\caches\transforms-3\a6773bbb6b36f5dda931c33dffacd3f7\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\a3384\.gradle\caches\transforms-3\a6773bbb6b36f5dda931c33dffacd3f7\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\8afca6733ba209e96b22ec86bf66ee1e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.emoji2:emoji2:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\8afca6733ba209e96b22ec86bf66ee1e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0] C:\Users\a3384\.gradle\caches\transforms-3\28ace14e05e58ec8beacb239fd6e0b35\transformed\jetified-firebase-appcheck-interop-16.0.0\AndroidManifest.xml:24:5-20
@@ -217,6 +220,8 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\a3384\.gradle\cac
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\426c450c0b87b08513484191a4ca1f9a\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\a3384\.gradle\caches\transforms-3\11f819c9aa55fb34b4fa345b7195953c\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\a3384\.gradle\caches\transforms-3\11f819c9aa55fb34b4fa345b7195953c\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\a3384\.gradle\caches\transforms-3\a6773bbb6b36f5dda931c33dffacd3f7\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\a3384\.gradle\caches\transforms-3\a6773bbb6b36f5dda931c33dffacd3f7\transformed\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\68510c080e507e6530ef66e866bccd76\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\68510c080e507e6530ef66e866bccd76\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\a3384\.gradle\caches\transforms-3\09d1ae61f1150d4587952c9e5a766e55\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44

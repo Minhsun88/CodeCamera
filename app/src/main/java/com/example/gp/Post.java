@@ -9,16 +9,17 @@ import java.util.Date;
 public class Post {
 
     long PostPicCount;
-    String PostTexts, docId;
+    String PostTexts, docId, PostAuthor;
     Date PostTimes;
 
     public Post(){}
 
-    public Post (long postPicCount, String postTexts, Date postTimes, String docId) {
+    public Post (long postPicCount, String postTexts, Date postTimes, String docId, String postAuthor) {
         this.PostPicCount = postPicCount;
         this.PostTexts = postTexts;
         this.PostTimes = postTimes;
         this.docId = docId;
+        this.PostAuthor = postAuthor;
     }
 
     public long getPostPicCount() {
@@ -35,6 +36,14 @@ public class Post {
 
     public void setPostTexts(String postTexts) {
         this.PostTexts = postTexts;
+    }
+
+    public String getPostAuthor() {
+        return PostAuthor;
+    }
+
+    public void setPostAuthor(String postAuthor) {
+        this.PostAuthor = postAuthor;
     }
 
     public Date getPostTimes() {

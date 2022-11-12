@@ -275,6 +275,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearTop
 attr clearsTag
 attr clickAction
@@ -2556,6 +2560,8 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
+drawable background2
+drawable background3
 drawable background_color_circle_selector
 drawable background_transparent
 drawable baseline_person_black_36
@@ -2683,6 +2689,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id GroupName
+id ImageView
 id InputEmail
 id InputPassword
 id InsertGroup
@@ -2704,10 +2711,13 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id SignOut
 id TOP_END
 id TOP_START
 id TextInputLayout1
 id TextInputLayout2
+id TextInputLayout3
+id TextInputLayout4
 id TextViewDate
 id TextViewTime
 id Time
@@ -2812,7 +2822,6 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnAddNewNote
-id btnAddNewPost
 id btnSavePost
 id btnSetDate
 id btnSetTime
@@ -2973,6 +2982,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id info
@@ -3214,7 +3224,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView2
 id textView3
 id textViewName
@@ -4755,6 +4764,7 @@ styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carou
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize

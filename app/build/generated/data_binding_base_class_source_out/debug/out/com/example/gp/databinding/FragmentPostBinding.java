@@ -4,7 +4,6 @@ package com.example.gp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,15 +26,11 @@ public final class FragmentPostBinding implements ViewBinding {
   @NonNull
   public final RecyclerView RecyclerView;
 
-  @NonNull
-  public final Button btnAddNewPost;
-
   private FragmentPostBinding(@NonNull FrameLayout rootView, @NonNull TextView PostName,
-      @NonNull RecyclerView RecyclerView, @NonNull Button btnAddNewPost) {
+      @NonNull RecyclerView RecyclerView) {
     this.rootView = rootView;
     this.PostName = PostName;
     this.RecyclerView = RecyclerView;
-    this.btnAddNewPost = btnAddNewPost;
   }
 
   @Override
@@ -77,13 +72,7 @@ public final class FragmentPostBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnAddNewPost;
-      Button btnAddNewPost = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddNewPost == null) {
-        break missingId;
-      }
-
-      return new FragmentPostBinding((FrameLayout) rootView, PostName, RecyclerView, btnAddNewPost);
+      return new FragmentPostBinding((FrameLayout) rootView, PostName, RecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

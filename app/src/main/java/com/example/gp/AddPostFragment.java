@@ -37,6 +37,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -62,6 +63,8 @@ public class AddPostFragment extends Fragment {
         View view = B.getRoot();
         StorageRef = FirebaseStorage.getInstance().getReference();
 
+        Bundle bundle=getArguments();
+        String selectedDate=bundle.getString("Date");
         db.collection("MemberData")
                 .document(Auth.getCurrentUser().getEmail())
                 .get()
@@ -76,45 +79,48 @@ public class AddPostFragment extends Fragment {
         B.btnSavePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Text = B.PostEdText.getText().toString();
-                Calendar calendar= Calendar.getInstance();
+                try {
+                    String Text = B.PostEdText.getText().toString();
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/dd/MM");
 
-                HashMap<String,Object> Posts = new HashMap<>();
-                Posts.put("PostTexts",Text);
-                Posts.put("PostTimes",calendar.getTime());
-                Posts.put("PostAuthor",Auth.getCurrentUser().getEmail());
-                Posts.put("PostPicCount",UriList.size());
-                db.collection("Posts")
-                        .add(Posts).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                        for (int i = 0 ; i < UriList.size() ; i++ ){
-                            Uri uri = (Uri) UriList.get(i);
+                    HashMap<String,Object> Posts = new HashMap<>();
+                    Posts.put("PostTexts",Text);
+                    Posts.put("PostTimes",sdf.parse(selectedDate));
+                    Posts.put("PostAuthor",Auth.getCurrentUser().getEmail());
+                    Posts.put("PostPicCount",UriList.size());
+                    db.collection("Posts")
+                            .add(Posts).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                            for (int i = 0 ; i < UriList.size() ; i++ ){
+                                Uri uri = (Uri) UriList.get(i);
 
-                            StorageReference ref = StorageRef.child("PostImg").child( task.getResult().getId() + "_" + i);
-                            ref.putFile(uri)
-                                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                    @Override
-                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        Log.d("AAAAA","上傳成功");
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.d("AAAAA",e.getMessage());
-                                    }
-                                });
+                                StorageReference ref = StorageRef.child("PostImg").child( task.getResult().getId() + "_" + i);
+                                ref.putFile(uri)
+                                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                            @Override
+                                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                                Log.d("AAAAA","上傳成功");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("AAAAA",e.getMessage());
+                                            }
+                                        });
 
+                            }
                         }
-                    }
-                });
+                    });
 
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, new PostFragment());
-                fragmentTransaction.commit();
+                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame_layout, new HomeFragment());
+                    fragmentTransaction.commit();
+                }catch (Exception e){
+                    Log.d("addpost wrong",e.getMessage());
+                }
 
-                Log.d("AAAAA",UriList.toString());
             }
         });
 

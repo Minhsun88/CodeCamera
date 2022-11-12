@@ -15,14 +15,14 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             app:eventsEnabled="true"
-            app:headerColor="#FF9800"
+            app:headerColor="#00BCD4"
             android:layout_margin="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:selectionColor="#FF9800"
+            app:selectionColor="#00BCD4"
             app:selectionLabelColor="#FFFFFF"
-            app:todayLabelColor="#FF9800"
+            app:todayLabelColor="#00BCD4"
             app:type="one_day_picker"
             tools:layout_editor_absoluteX="0dp" />
 
