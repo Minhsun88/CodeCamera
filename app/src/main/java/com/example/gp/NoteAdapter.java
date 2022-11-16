@@ -1,10 +1,12 @@
 package com.example.gp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -57,12 +62,30 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         String Text = note.NoteTexts;
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         String Time = format.format(note.NoteTimes);
-//        String Id = note.docId;
+        String Id = note.docId;
 
         holder.textViewTitle.setText(Title);
         holder.textViewText.setText(Text);
         holder.textViewTime.setText(Time);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                UpdateNoteFragment updateNoteFragment = new UpdateNoteFragment();
+                bundle.putString("id",Id);
+                bundle.putString("title",Title);
+                bundle.putString("text",Text);
+
+                updateNoteFragment.setArguments(bundle);
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_layout,updateNoteFragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

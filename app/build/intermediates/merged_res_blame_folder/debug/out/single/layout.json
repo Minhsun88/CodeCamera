@@ -16,16 +16,20 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add_member.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_alert.xml",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_alert.xml"
     },
     {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
+    },
+    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_insert.xml",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_insert.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_update_note.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_note.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group.xml",
@@ -42,6 +46,10 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\post_view.xml",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\post_view.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_update_post.xml",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_post.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_setting.xml",

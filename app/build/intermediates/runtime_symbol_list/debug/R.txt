@@ -3411,6 +3411,8 @@ int layout fragment_post 0x7f0c003d
 int layout fragment_record 0x7f0c003e
 int layout fragment_select_group 0x7f0c003f
 int layout fragment_setting 0x7f0c0096
+int layout fragment_update_note 0x7f0c0097
+int layout fragment_update_post 0x7f0c0098
 int layout item_view 0x7f0c0040
 int layout m3_alert_dialog 0x7f0c0041
 int layout m3_alert_dialog_actions 0x7f0c0042

@@ -37,7 +37,7 @@ public class PostFragment extends Fragment {
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     ArrayList<Post> arrayListPost = new ArrayList<Post>();
     PostAdapter adapter;
-
+    Integer position = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +52,17 @@ public class PostFragment extends Fragment {
         B.RecyclerView.setHasFixedSize(true);
         B.RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter =new PostAdapter(getContext(),arrayListPost);
+        adapter = new PostAdapter(getContext(),arrayListPost);
         B.RecyclerView.setAdapter(adapter);
         EventChangeListener();
+
+        if(getArguments() != null) {
+            Bundle bundle = getArguments();
+            position = bundle.getInt("position");
+
+            B.RecyclerView.scrollToPosition(position);
+        }
+
 
         return view;
     }

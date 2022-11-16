@@ -72,6 +72,10 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\bottom_nav_icon_color_selector.xml"
     },
     {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_update_post.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_post.xml"
+    },
+    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_insert.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_insert.xml"
     },
@@ -226,6 +230,10 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_update_note.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_note.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_bg_selector.xml.flat",

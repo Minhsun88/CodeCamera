@@ -20,9 +20,10 @@
             android:gravity="center"
             android:text="貼文區"
             android:textSize="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
@@ -30,13 +31,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="630dp"
+            android:layout_height="680dp"
             android:layout_marginTop="0pt"
             android:background="#00BCD4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PostName" />
+            app:layout_constraintTop_toBottomOf="@+id/PostName"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

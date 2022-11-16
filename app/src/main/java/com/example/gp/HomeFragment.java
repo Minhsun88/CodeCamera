@@ -56,6 +56,7 @@ public class HomeFragment extends Fragment {
 
     ArrayList<Note> arrayListNote = new ArrayList<Note>();
     ArrayList<Post> arrayListPost = new ArrayList<Post>();
+    ArrayList<Integer> PositionList = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +118,7 @@ public class HomeFragment extends Fragment {
                 for(int i = 0; i < list.size(); i++){
                     if(selectedDay.equals(sdf.format(list.get(i).PostTimes))){
                         arrayAdapter.add(list.get(i).PostAuthor.substring(0,5) + "的貼文");
+                        PositionList.add(i);
                     }
                 }
 
@@ -143,17 +145,15 @@ public class HomeFragment extends Fragment {
                         }).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String strName = arrayAdapter.getItem(which);
-                                AlertDialog.Builder builderInner = new AlertDialog.Builder(getContext());
-                                builderInner.setMessage(strName);
-                                builderInner.setTitle("Your Selected Item is");
-                                builderInner.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog,int which) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                                builderInner.show();
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("position",PositionList.get(which));
+
+                                PostFragment postFragment = new PostFragment();
+                                postFragment.setArguments(bundle);
+
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.frame_layout,postFragment);
+                                fragmentTransaction.commit();
                             }
                         });
 
@@ -186,12 +186,13 @@ public class HomeFragment extends Fragment {
                         }else {
                             arrayAdapter.add(sdf.format(list.get(i).NoteTimes)+"  "+list.get(i).NoteTitles);
                         }
+                        PositionList.add(i);
                     }
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
                         .setTitle("本日紀錄")
-                        .setIcon(R.drawable.ic_baseline_photo_library_24)
+                        .setIcon(R.drawable.ic_baseline_list_alt_24)
                         .setPositiveButton("新增紀錄", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -212,17 +213,15 @@ public class HomeFragment extends Fragment {
                         }).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String strName = arrayAdapter.getItem(which);
-                                AlertDialog.Builder builderInner = new AlertDialog.Builder(getContext());
-                                builderInner.setMessage(strName);
-                                builderInner.setTitle("Your Selected Item is");
-                                builderInner.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog,int which) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                                builderInner.show();
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("position",PositionList.get(which));
+
+                                RecordFragment recordFragment = new RecordFragment();
+                                recordFragment.setArguments(bundle);
+
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.frame_layout,recordFragment);
+                                fragmentTransaction.commit();
                             }
                         });
 
@@ -238,6 +237,7 @@ public class HomeFragment extends Fragment {
     public void readNote(NoteCallback noteCallback) {
         db.collection("Notes")
                 .whereEqualTo("NoteAuthor", Auth.getCurrentUser().getEmail())
+                .orderBy("NoteTimes")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -257,6 +257,7 @@ public class HomeFragment extends Fragment {
     public void readPost(PostCallback postCallback) {
         db.collection("Posts")
                 .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
+                .orderBy("PostTimes")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

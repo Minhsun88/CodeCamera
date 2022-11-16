@@ -3412,6 +3412,8 @@ layout fragment_post
 layout fragment_record
 layout fragment_select_group
 layout fragment_setting
+layout fragment_update_note
+layout fragment_update_post
 layout item_view
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
