@@ -4,20 +4,59 @@ package com.example.gp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentUpdatePostBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentUpdatePostBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final LinearLayout Linear;
+
+  @NonNull
+  public final EditText PostEdText;
+
+  @NonNull
+  public final CircleImageView PostImg;
+
+  @NonNull
+  public final HorizontalScrollView addScrollView;
+
+  @NonNull
+  public final Button btnSavePost;
+
+  @NonNull
+  public final TextView textViewName;
+
+  @NonNull
+  public final TextView textViewTitle;
+
+  private FragmentUpdatePostBinding(@NonNull FrameLayout rootView, @NonNull LinearLayout Linear,
+      @NonNull EditText PostEdText, @NonNull CircleImageView PostImg,
+      @NonNull HorizontalScrollView addScrollView, @NonNull Button btnSavePost,
+      @NonNull TextView textViewName, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
+    this.Linear = Linear;
+    this.PostEdText = PostEdText;
+    this.PostImg = PostImg;
+    this.addScrollView = addScrollView;
+    this.btnSavePost = btnSavePost;
+    this.textViewName = textViewName;
+    this.textViewTitle = textViewTitle;
   }
 
   @Override
@@ -43,10 +82,56 @@ public final class FragmentUpdatePostBinding implements ViewBinding {
 
   @NonNull
   public static FragmentUpdatePostBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.Linear;
+      LinearLayout Linear = ViewBindings.findChildViewById(rootView, id);
+      if (Linear == null) {
+        break missingId;
+      }
 
-    return new FragmentUpdatePostBinding((FrameLayout) rootView);
+      id = R.id.PostEdText;
+      EditText PostEdText = ViewBindings.findChildViewById(rootView, id);
+      if (PostEdText == null) {
+        break missingId;
+      }
+
+      id = R.id.PostImg;
+      CircleImageView PostImg = ViewBindings.findChildViewById(rootView, id);
+      if (PostImg == null) {
+        break missingId;
+      }
+
+      id = R.id.addScrollView;
+      HorizontalScrollView addScrollView = ViewBindings.findChildViewById(rootView, id);
+      if (addScrollView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSavePost;
+      Button btnSavePost = ViewBindings.findChildViewById(rootView, id);
+      if (btnSavePost == null) {
+        break missingId;
+      }
+
+      id = R.id.textViewName;
+      TextView textViewName = ViewBindings.findChildViewById(rootView, id);
+      if (textViewName == null) {
+        break missingId;
+      }
+
+      id = R.id.textViewTitle;
+      TextView textViewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (textViewTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentUpdatePostBinding((FrameLayout) rootView, Linear, PostEdText, PostImg,
+          addScrollView, btnSavePost, textViewName, textViewTitle);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

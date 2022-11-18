@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -16,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +28,7 @@ public final class FragmentAddPostBinding implements ViewBinding {
   public final EditText PostEdText;
 
   @NonNull
-  public final ImageView PostImg;
+  public final CircleImageView PostImg;
 
   @NonNull
   public final LinearLayout addLinear;
@@ -49,7 +49,7 @@ public final class FragmentAddPostBinding implements ViewBinding {
   public final TextView textViewTitle;
 
   private FragmentAddPostBinding(@NonNull FrameLayout rootView, @NonNull EditText PostEdText,
-      @NonNull ImageView PostImg, @NonNull LinearLayout addLinear, @NonNull Button addPostImg,
+      @NonNull CircleImageView PostImg, @NonNull LinearLayout addLinear, @NonNull Button addPostImg,
       @NonNull HorizontalScrollView addScrollView, @NonNull Button btnSavePost,
       @NonNull TextView textViewName, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
@@ -97,7 +97,7 @@ public final class FragmentAddPostBinding implements ViewBinding {
       }
 
       id = R.id.PostImg;
-      ImageView PostImg = ViewBindings.findChildViewById(rootView, id);
+      CircleImageView PostImg = ViewBindings.findChildViewById(rootView, id);
       if (PostImg == null) {
         break missingId;
       }

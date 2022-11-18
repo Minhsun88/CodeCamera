@@ -2565,7 +2565,7 @@ int drawable background_color_circle_selector 0x7f080058
 int drawable background_transparent 0x7f080059
 int drawable baseline_person_black_36 0x7f08005a
 int drawable baseline_photo_camera_black_24 0x7f08005b
-int drawable bottom_nav_icon_color_selector 0x7f0800cb
+int drawable botton_nav_icon_color_selector 0x7f0800d5
 int drawable btn_bg_selector 0x7f08005c
 int drawable btn_checkbox_checked_mtrl 0x7f08005d
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08005e
@@ -2692,6 +2692,7 @@ int id ImageView 0x7f09025a
 int id InputEmail 0x7f09024f
 int id InputPassword 0x7f090250
 int id InsertGroup 0x7f090008
+int id Linear 0x7f090261
 int id META 0x7f090009
 int id Modeswitch 0x7f090255
 int id MyText 0x7f09000a

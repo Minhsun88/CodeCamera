@@ -2566,7 +2566,7 @@ drawable background_color_circle_selector
 drawable background_transparent
 drawable baseline_person_black_36
 drawable baseline_photo_camera_black_24
-drawable bottom_nav_icon_color_selector
+drawable botton_nav_icon_color_selector
 drawable btn_bg_selector
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2693,6 +2693,7 @@ id ImageView
 id InputEmail
 id InputPassword
 id InsertGroup
+id Linear
 id META
 id Modeswitch
 id MyText

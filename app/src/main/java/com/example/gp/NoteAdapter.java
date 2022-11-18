@@ -82,7 +82,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 activity.getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame_layout,updateNoteFragment)
-                        .addToBackStack(null)
                         .commit();
             }
         });

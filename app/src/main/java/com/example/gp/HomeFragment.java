@@ -274,7 +274,6 @@ public class HomeFragment extends Fragment {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         try {
             String dateToStr = sdf.format(date);
-            sdf.setTimeZone(TimeZone.getTimeZone("GMT-8:00"));
             date = sdf.parse(dateToStr);
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);

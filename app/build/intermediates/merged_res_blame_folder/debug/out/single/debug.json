@@ -68,10 +68,6 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_list_alt_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_nav_icon_color_selector.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\bottom_nav_icon_color_selector.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_update_post.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_post.xml"
     },
@@ -178,6 +174,10 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_botton_nav_icon_color_selector.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\botton_nav_icon_color_selector.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
