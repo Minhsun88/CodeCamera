@@ -176,12 +176,12 @@ ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:19:9-21:39
 		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:21:13-36
 	android:name
 		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:20:13-37
-activity#com.example.gp.MainActivity
+activity#com.example.gp.login
 ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:22:9-30:20
 	android:exported
 		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-41
+		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-34
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<!--    <item-->
-<!--        android:id="@+id/alert"-->
-<!--        android:icon="@drawable/ic_baseline_alert_24"-->
-<!--        android:title="通知" />-->
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
@@ -20,8 +16,8 @@
         android:id="@+id/setting"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="個人資料"/>
-<!--    <item-->
-<!--        android:id="@+id/groups"-->
-<!--        android:icon="@drawable/ic_baseline_groups_24"-->
-<!--        android:title="群組"/>-->
+    <item
+        android:id="@+id/groups"
+        android:icon="@drawable/ic_baseline_groups_24"
+        android:title="群組"/>
 </menu>

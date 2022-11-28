@@ -5,11 +5,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,30 +16,16 @@ import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 
 import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-import com.example.gp.databinding.ActivityIndexBinding;
-import com.example.gp.databinding.FragmentAddNoteBinding;
 import com.example.gp.databinding.FragmentHomeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.SnapshotMetadata;
-import com.google.firebase.firestore.Source;
 
 import java.text.SimpleDateFormat;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -130,11 +114,11 @@ public class HomeFragment extends Fragment {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Bundle bundle = new Bundle();
                                 bundle.putString("Date", selectedDay);
-                                AddPostFragment addPostFragment = new AddPostFragment();
-                                addPostFragment.setArguments(bundle);
+                                PostAddFragment postAddFragment = new PostAddFragment();
+                                postAddFragment.setArguments(bundle);
 
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout,addPostFragment);
+                                fragmentTransaction.replace(R.id.frame_layout, postAddFragment);
                                 fragmentTransaction.commit();
                             }
                         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -198,11 +182,11 @@ public class HomeFragment extends Fragment {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Bundle bundle = new Bundle();
                                 bundle.putString("Date", selectedDay);
-                                AddNoteFragment addNoteFragment = new AddNoteFragment();
-                                addNoteFragment.setArguments(bundle);
+                                NoteAddFragment noteAddFragment = new NoteAddFragment();
+                                noteAddFragment.setArguments(bundle);
 
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout,addNoteFragment);
+                                fragmentTransaction.replace(R.id.frame_layout, noteAddFragment);
                                 fragmentTransaction.commit();
                             }
                         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -216,11 +200,11 @@ public class HomeFragment extends Fragment {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("position",PositionList.get(which));
 
-                                RecordFragment recordFragment = new RecordFragment();
-                                recordFragment.setArguments(bundle);
+                                NoteFragment noteFragment = new NoteFragment();
+                                noteFragment.setArguments(bundle);
 
                                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout,recordFragment);
+                                fragmentTransaction.replace(R.id.frame_layout, noteFragment);
                                 fragmentTransaction.commit();
                             }
                         });
@@ -255,17 +239,25 @@ public class HomeFragment extends Fragment {
     }
 
     public void readPost(PostCallback postCallback) {
-        db.collection("Posts")
-                .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
-                .orderBy("PostTimes")
+        db.collection("MemberData")
+                .document(Auth.getCurrentUser().getEmail())
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for(DocumentSnapshot doc : task.getResult()){
-                            arrayListPost.add(doc.toObject(Post.class));
-                        }
-                        postCallback.onCallback(arrayListPost);
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        db.collection("Posts")
+                                .whereEqualTo("PostGroup", task.getResult().get("group").toString())
+                                .orderBy("PostTimes")
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        for(DocumentSnapshot doc : task.getResult()){
+                                            arrayListPost.add(doc.toObject(Post.class));
+                                        }
+                                        postCallback.onCallback(arrayListPost);
+                                    }
+                                });
                     }
                 });
     }

@@ -22,6 +22,9 @@ public final class FragmentSettingBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView GroupName;
+
+  @NonNull
   public final CircleImageView ImageView;
 
   @NonNull
@@ -33,9 +36,11 @@ public final class FragmentSettingBinding implements ViewBinding {
   @NonNull
   public final TextView nickName;
 
-  private FragmentSettingBinding(@NonNull FrameLayout rootView, @NonNull CircleImageView ImageView,
-      @NonNull Button SignOut, @NonNull TextView loginId, @NonNull TextView nickName) {
+  private FragmentSettingBinding(@NonNull FrameLayout rootView, @NonNull TextView GroupName,
+      @NonNull CircleImageView ImageView, @NonNull Button SignOut, @NonNull TextView loginId,
+      @NonNull TextView nickName) {
     this.rootView = rootView;
+    this.GroupName = GroupName;
     this.ImageView = ImageView;
     this.SignOut = SignOut;
     this.loginId = loginId;
@@ -69,6 +74,12 @@ public final class FragmentSettingBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.GroupName;
+      TextView GroupName = ViewBindings.findChildViewById(rootView, id);
+      if (GroupName == null) {
+        break missingId;
+      }
+
       id = R.id.ImageView;
       CircleImageView ImageView = ViewBindings.findChildViewById(rootView, id);
       if (ImageView == null) {
@@ -93,8 +104,8 @@ public final class FragmentSettingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSettingBinding((FrameLayout) rootView, ImageView, SignOut, loginId,
-          nickName);
+      return new FragmentSettingBinding((FrameLayout) rootView, GroupName, ImageView, SignOut,
+          loginId, nickName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

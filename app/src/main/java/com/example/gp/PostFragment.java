@@ -68,26 +68,33 @@ public class PostFragment extends Fragment {
     }
 
     private void EventChangeListener() {
-                db.collection("Posts")
-                    .whereEqualTo("PostAuthor", Auth.getCurrentUser().getEmail())
-                    .orderBy("PostTimes")
-                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                db.collection("MemberData")
+                        .document(Auth.getCurrentUser().getEmail())
+                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        db.collection("Posts")
+                                .whereEqualTo("PostGroup", task.getResult().get("group").toString())
+                                .orderBy("PostTimes")
+                                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                        if(error != null){
-                            Log.d("FireStore Error",error.getMessage());
+                                        if(error != null){
+                                            Log.d("FireStore Error",error.getMessage());
 
-                            return;
-                        }
-                        for (DocumentChange doc: value.getDocumentChanges())
-                        {
-                            if(doc.getType() == DocumentChange.Type.ADDED){
-                                arrayListPost.add(doc.getDocument().toObject(Post.class));
-                            }
-                            adapter.notifyDataSetChanged();
-                        }
+                                            return;
+                                        }
+                                        for (DocumentChange doc: value.getDocumentChanges())
+                                        {
+                                            if(doc.getType() == DocumentChange.Type.ADDED){
+                                                arrayListPost.add(doc.getDocument().toObject(Post.class));
+                                            }
+                                            adapter.notifyDataSetChanged();
+                                        }
 
+                                    }
+                                });
                     }
                 });
     }

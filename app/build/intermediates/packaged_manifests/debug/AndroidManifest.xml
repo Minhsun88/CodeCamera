@@ -35,7 +35,7 @@
             android:name="com.example.gp.register"
             android:exported="true" />
         <activity
-            android:name="com.example.gp.MainActivity"
+            android:name="com.example.gp.login"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_add_post.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_add_post.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_navigation.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\menu\\bottom_navigation.xml"
     },
@@ -32,6 +28,10 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_mms_36.xml"
     },
     {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note.xml"
+    },
+    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_photo_library_24.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_photo_library_24.xml"
     },
@@ -48,8 +48,12 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_record.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_record.xml"
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_update.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_update.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_add.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_add.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_mylinearlayout.xml.flat",
@@ -68,14 +72,6 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_list_alt_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_update_post.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_post.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_insert.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_insert.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_track_selector.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\track_selector.xml"
     },
@@ -86,10 +82,6 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_groups_24.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_groups_24.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_alert.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_alert.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_background3.png.flat",
@@ -114,6 +106,14 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_add.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_add.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_update.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_update.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_add_36.xml.flat",
@@ -168,10 +168,6 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\thumb_selector.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_add_note.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_add_note.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
@@ -186,10 +182,6 @@
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\navigation_main_navgation.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\navigation\\main_navgation.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_select_group.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_select_group.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_24.xml.flat",
@@ -224,20 +216,16 @@
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_add_member.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add_member.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_update_note.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_note.xml"
-    },
-    {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_bg_selector.xml.flat",
         "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\btn_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_add.xml.flat",
+        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add.xml"
     },
     {
         "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",

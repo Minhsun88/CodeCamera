@@ -73,10 +73,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         String Time = format.format(post.PostTimes);
         String Id = post.docId;
+        String Author = post.PostAuthor;
         long Count = post.PostPicCount;
 
         db.collection("MemberData")
-                .document(Auth.getCurrentUser().getEmail())
+                .document(Author)
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -84,7 +85,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             }
         });
         //大頭貼
-        StorageRef.child("RegisterImg").child(Auth.getCurrentUser().getEmail())
+        StorageRef.child("RegisterImg").child(Author)
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override

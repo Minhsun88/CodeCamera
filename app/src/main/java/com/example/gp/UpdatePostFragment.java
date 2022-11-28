@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
-import com.example.gp.databinding.FragmentUpdatePostBinding;
+import com.example.gp.databinding.FragmentPostUpdateBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 
 public class UpdatePostFragment extends Fragment {
 
-    FragmentUpdatePostBinding B;
+    FragmentPostUpdateBinding B;
     private StorageReference StorageRef = FirebaseStorage.getInstance().getReference();
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -43,7 +43,7 @@ public class UpdatePostFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        B = FragmentUpdatePostBinding.inflate(inflater,container,false);
+        B = FragmentPostUpdateBinding.inflate(inflater,container,false);
         View v = B.getRoot();
 
         Bundle bundle = getArguments();

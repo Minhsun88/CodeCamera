@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,16 +23,29 @@ public final class FragmentGroupSetBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button AddMember;
+  public final TextView GroupName;
 
   @NonNull
-  public final LinearLayout layout;
+  public final Button addMember;
 
-  private FragmentGroupSetBinding(@NonNull FrameLayout rootView, @NonNull Button AddMember,
-      @NonNull LinearLayout layout) {
+  @NonNull
+  public final Button deleteGroup;
+
+  @NonNull
+  public final ListView member;
+
+  @NonNull
+  public final EditText memberId;
+
+  private FragmentGroupSetBinding(@NonNull FrameLayout rootView, @NonNull TextView GroupName,
+      @NonNull Button addMember, @NonNull Button deleteGroup, @NonNull ListView member,
+      @NonNull EditText memberId) {
     this.rootView = rootView;
-    this.AddMember = AddMember;
-    this.layout = layout;
+    this.GroupName = GroupName;
+    this.addMember = addMember;
+    this.deleteGroup = deleteGroup;
+    this.member = member;
+    this.memberId = memberId;
   }
 
   @Override
@@ -60,19 +75,38 @@ public final class FragmentGroupSetBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.AddMember;
-      Button AddMember = ViewBindings.findChildViewById(rootView, id);
-      if (AddMember == null) {
+      id = R.id.GroupName;
+      TextView GroupName = ViewBindings.findChildViewById(rootView, id);
+      if (GroupName == null) {
         break missingId;
       }
 
-      id = R.id.layout;
-      LinearLayout layout = ViewBindings.findChildViewById(rootView, id);
-      if (layout == null) {
+      id = R.id.addMember;
+      Button addMember = ViewBindings.findChildViewById(rootView, id);
+      if (addMember == null) {
         break missingId;
       }
 
-      return new FragmentGroupSetBinding((FrameLayout) rootView, AddMember, layout);
+      id = R.id.deleteGroup;
+      Button deleteGroup = ViewBindings.findChildViewById(rootView, id);
+      if (deleteGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.member;
+      ListView member = ViewBindings.findChildViewById(rootView, id);
+      if (member == null) {
+        break missingId;
+      }
+
+      id = R.id.memberId;
+      EditText memberId = ViewBindings.findChildViewById(rootView, id);
+      if (memberId == null) {
+        break missingId;
+      }
+
+      return new FragmentGroupSetBinding((FrameLayout) rootView, GroupName, addMember, deleteGroup,
+          member, memberId);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

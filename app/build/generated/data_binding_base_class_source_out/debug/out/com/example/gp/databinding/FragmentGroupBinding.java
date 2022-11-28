@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,16 +21,20 @@ public final class FragmentGroupBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
-  public final Button select;
+  public final Button GroupAdd;
 
   @NonNull
-  public final Button set;
+  public final Button GroupSet;
 
-  private FragmentGroupBinding(@NonNull FrameLayout rootView, @NonNull Button select,
-      @NonNull Button set) {
+  @NonNull
+  public final Spinner Spinner;
+
+  private FragmentGroupBinding(@NonNull FrameLayout rootView, @NonNull Button GroupAdd,
+      @NonNull Button GroupSet, @NonNull Spinner Spinner) {
     this.rootView = rootView;
-    this.select = select;
-    this.set = set;
+    this.GroupAdd = GroupAdd;
+    this.GroupSet = GroupSet;
+    this.Spinner = Spinner;
   }
 
   @Override
@@ -59,19 +64,25 @@ public final class FragmentGroupBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.select;
-      Button select = ViewBindings.findChildViewById(rootView, id);
-      if (select == null) {
+      id = R.id.GroupAdd;
+      Button GroupAdd = ViewBindings.findChildViewById(rootView, id);
+      if (GroupAdd == null) {
         break missingId;
       }
 
-      id = R.id.set;
-      Button set = ViewBindings.findChildViewById(rootView, id);
-      if (set == null) {
+      id = R.id.GroupSet;
+      Button GroupSet = ViewBindings.findChildViewById(rootView, id);
+      if (GroupSet == null) {
         break missingId;
       }
 
-      return new FragmentGroupBinding((FrameLayout) rootView, select, set);
+      id = R.id.Spinner;
+      Spinner Spinner = ViewBindings.findChildViewById(rootView, id);
+      if (Spinner == null) {
+        break missingId;
+      }
+
+      return new FragmentGroupBinding((FrameLayout) rootView, GroupAdd, GroupSet, Spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -124,20 +124,13 @@ public class register extends AppCompatActivity {
                                                 .show();
 
                                         HashMap<String,Object> member =new HashMap<>();
-                                        HashMap<String,Object> np =new HashMap<>();
 
-//                                        member.put("account",email);
+                                        member.put("group","");
                                         member.put("password",pwd);
                                         member.put("name",name);
                                         db.collection("MemberData")
                                                 .document(email)
                                                 .set(member);
-                                        db.collection("Posts")
-                                                .document(email)
-                                                .set(np);
-                                        db.collection("Notes")
-                                                .document(email)
-                                                .set(np);
                                     }else{
                                         Toast.makeText(register.this, "帳號建立失敗", Toast.LENGTH_SHORT).show();
                                     }

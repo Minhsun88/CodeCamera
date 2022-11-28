@@ -2,27 +2,21 @@ package com.example.gp;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.gp.databinding.FragmentUpdateNoteBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.gp.databinding.FragmentNoteUpdateBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
 public class UpdateNoteFragment extends Fragment {
 
-    private FragmentUpdateNoteBinding B;
+    private FragmentNoteUpdateBinding B;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +26,7 @@ public class UpdateNoteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        B = FragmentUpdateNoteBinding.inflate(inflater,container,false);
+        B = FragmentNoteUpdateBinding.inflate(inflater,container,false);
         View v = B.getRoot();
 
         Bundle bundle = getArguments();
@@ -51,7 +45,7 @@ public class UpdateNoteFragment extends Fragment {
                         .document(bundle.getString("id"))
                         .update(note);
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, new RecordFragment());
+                fragmentTransaction.replace(R.id.frame_layout, new NoteFragment());
                 fragmentTransaction.commit();
             }
         });

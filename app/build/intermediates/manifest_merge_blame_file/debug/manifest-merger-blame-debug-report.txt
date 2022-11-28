@@ -59,8 +59,8 @@
 36-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:21:13-36
 37        <activity
 37-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:22:9-30:20
-38            android:name="com.example.gp.MainActivity"
-38-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-41
+38            android:name="com.example.gp.login"
+38-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-34
 39            android:exported="true" >
 39-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:24:13-36
 40            <intent-filter>
