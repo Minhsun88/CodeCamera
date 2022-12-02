@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+            "outputFile": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\2687a1801e633f0764bb287fb9f7a448\\transformed\\jetified-play-services-base-18.0.1\\res\\values-hy\\values.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nl-rNL\\values-nl-rNL.xml",
+            "outputFile": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nl-rNL\\values-nl-rNL.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\595dd6180124daeb77a96e08534aa0f2\\transformed\\jetified-material-calendar-view-1.7.0\\res\\values-nl-rNL\\values-nl-rNL.xml",

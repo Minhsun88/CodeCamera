@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.databinding:viewbinding:7.0.2] C:\Users\a3384\.gradle\caches\transforms-3\4222c4b22cb65a4ed9a3ff250f1e84b0\transformed\jetified-viewbinding-7.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.5.2] C:\Users\a3384\.gradle\caches\transforms-3\d45684c23f3dae0aadfc32fcd5756789\transformed\navigation-ui-2.5.2\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\a3384\.gradle\caches\transforms-3\fbc004077e64d3f0c7fdc38d7e8683c6\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
@@ -83,25 +83,25 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\a3384\.gradle\cache
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\a3384\.gradle\caches\transforms-3\1acf035fbf9f0dce3b2c8cdeccfbc051\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\a3384\.gradle\caches\transforms-3\4f30e9a606ea9b9ef701c7e3844c21b3\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\a3384\.gradle\caches\transforms-3\bfcefae3c638c0b2a7e002d2816c9326\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:2:1-11:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:3:5-29
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:3:5-29
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:1-33:12
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:1-33:12
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:5:5-31:19
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:5:5-31:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\a3384\.gradle\caches\transforms-3\fbc004077e64d3f0c7fdc38d7e8683c6\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\a3384\.gradle\caches\transforms-3\fbc004077e64d3f0c7fdc38d7e8683c6\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\a3384\.gradle\caches\transforms-3\b31fbaa0436ab8f1a60f4862cc032308\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -147,55 +147,55 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\a3
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\a3384\.gradle\caches\transforms-3\3c3eccdf8b0523f6ef1e393a03d6e2a5\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-62
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:11:9-62
 meta-data#com.google.android.actions
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:12:9-14:45
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:12:9-14:45
 	android:resource
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:14:13-42
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:14:13-42
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:13:13-54
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:13:13-54
 activity#com.example.gp.index
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:16:9-18:39
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:16:9-18:39
 	android:exported
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:17:13-34
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:17:13-34
 activity#com.example.gp.register
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:19:9-21:39
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:19:9-21:39
 	android:exported
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:21:13-36
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:20:13-37
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:20:13-37
 activity#com.example.gp.login
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:22:9-30:20
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:22:9-30:20
 	android:exported
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:24:13-36
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-34
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:23:13-34
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml:28:27-74
 uses-sdk
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:7.0.2] C:\Users\a3384\.gradle\caches\transforms-3\4222c4b22cb65a4ed9a3ff250f1e84b0\transformed\jetified-viewbinding-7.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:viewbinding:7.0.2] C:\Users\a3384\.gradle\caches\transforms-3\4222c4b22cb65a4ed9a3ff250f1e84b0\transformed\jetified-viewbinding-7.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-ui:2.5.2] C:\Users\a3384\.gradle\caches\transforms-3\d45684c23f3dae0aadfc32fcd5756789\transformed\navigation-ui-2.5.2\AndroidManifest.xml:20:5-22:41
@@ -354,16 +354,16 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\a33
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\a3384\.gradle\caches\transforms-3\4f30e9a606ea9b9ef701c7e3844c21b3\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\a3384\.gradle\caches\transforms-3\bfcefae3c638c0b2a7e002d2816c9326\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:5:5-7:41
 MERGED from [io.grpc:grpc-android:1.44.1] C:\Users\a3384\.gradle\caches\transforms-3\bfcefae3c638c0b2a7e002d2816c9326\transformed\jetified-grpc-android-1.44.1\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Clander_Shered\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		ADDED from D:\calendarShared\app\src\main\AndroidManifest.xml
+		INJECTED from D:\calendarShared\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-firestore:24.2.2] C:\Users\a3384\.gradle\caches\transforms-3\dcd6586f01f065786ea98b4ba73f812c\transformed\jetified-firebase-firestore-24.2.2\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-auth:21.0.7] C:\Users\a3384\.gradle\caches\transforms-3\d1a472b09c9eac3dcf0afd9dcf14dd81\transformed\jetified-firebase-auth-21.0.7\AndroidManifest.xml:24:5-79

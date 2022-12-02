@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\8b268b82a31e9bd66b89cd058cf3396f\\transformed\\appcompat-1.4.2\\res\\values-v26\\values-v26.xml",

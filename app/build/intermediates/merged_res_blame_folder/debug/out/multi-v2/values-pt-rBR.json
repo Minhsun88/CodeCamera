@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\3c3eccdf8b0523f6ef1e393a03d6e2a5\\transformed\\core-1.8.0\\res\\values-pt-rBR\\values-pt-rBR.xml",

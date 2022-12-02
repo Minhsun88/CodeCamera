@@ -1,102 +1,66 @@
 [
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_set.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_set.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_setting.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_setting.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_select_group.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_select_group.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_add_member.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add_member.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_index.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post_update.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_update.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_update_note.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_note.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note_add.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note_update.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_update.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_view.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\item_view.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_register.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note_update.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note_update.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\post_view.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\post_view.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_update_post.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_update_post.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post_update.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post_update.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_record.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_record.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_view.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\item_view.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_set.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group_set.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_add_note.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_add_note.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post_add.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_add_post.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_add_post.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_add.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_alert.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_alert.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_index.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_insert.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_insert.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_group_add.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_setting.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_setting.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post_add.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_add.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_note_add.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_add.xml"
-    },
-    {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\post_view.xml",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\post_view.xml"
     }
 ]

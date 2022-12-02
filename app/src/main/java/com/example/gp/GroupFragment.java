@@ -33,7 +33,6 @@ public class GroupFragment extends Fragment {
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     ArrayList<String> GroupList = new ArrayList<>();
     ArrayList<String> NameList = new ArrayList<>();
-    int check = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Clander_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\calendarShared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\Clander_Shered\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\calendarShared\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "1,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "16,114",
-                        "endColumns": "39,69",
-                        "endOffsets": "51,179"
+                        "startLines": "7,2,3,4,5,6,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "293,57,105,153,201,247,336",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "330,99,147,195,241,287,373"
                     },
                     "to": {
-                        "startLines": "1678,1719",
-                        "startColumns": "4,4",
-                        "startOffsets": "101925,106648",
-                        "endColumns": "39,69",
-                        "endOffsets": "101960,106713"
+                        "startLines": "609,853,854,855,866,867,871",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "30168,47614,47661,47708,48452,48497,48705",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "30205,47656,47703,47750,48492,48537,48742"
                     }
                 },
                 {
@@ -40,6 +40,25 @@
                     }
                 },
                 {
+                    "source": "D:\\calendarShared\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "818"
+                    },
+                    "to": {
+                        "startLines": "5791",
+                        "startColumns": "4",
+                        "startOffsets": "391853",
+                        "endLines": "5803",
+                        "endColumns": "12",
+                        "endOffsets": "392555"
+                    }
+                },
+                {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\f492b7edcc8e38170cf43375ea4150e0\\transformed\\jetified-startup-runtime-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -54,6 +73,23 @@
                         "startOffsets": "101842",
                         "endColumns": "82",
                         "endOffsets": "101920"
+                    }
+                },
+                {
+                    "source": "D:\\calendarShared\\app\\src\\main\\res\\values\\dimen.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "57,103,149",
+                        "endColumns": "44,44,42",
+                        "endOffsets": "97,143,187"
+                    },
+                    "to": {
+                        "startLines": "1451,1452,1453",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "88365,88410,88455",
+                        "endColumns": "44,44,42",
+                        "endOffsets": "88405,88450,88493"
                     }
                 },
                 {
@@ -74,6 +110,23 @@
                     }
                 },
                 {
+                    "source": "D:\\calendarShared\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,710",
+                        "endColumns": "143,81,103,108,119,95,72",
+                        "endOffsets": "194,276,380,489,609,705,778"
+                    },
+                    "to": {
+                        "startLines": "1706,1714,1715,1716,1717,1718,1812",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105310,106137,106219,106323,106432,106552,119894",
+                        "endColumns": "143,81,103,108,119,95,72",
+                        "endOffsets": "105449,106214,106318,106427,106547,106643,119962"
+                    }
+                },
+                {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\5cecd45368fe7b862b128e1bacde2dc8\\transformed\\jetified-savedstate-1.2.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -88,6 +141,23 @@
                         "startOffsets": "96120",
                         "endColumns": "53",
                         "endOffsets": "96169"
+                    }
+                },
+                {
+                    "source": "D:\\calendarShared\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,117",
+                        "endColumns": "39,69",
+                        "endOffsets": "52,182"
+                    },
+                    "to": {
+                        "startLines": "1678,1719",
+                        "startColumns": "4,4",
+                        "startOffsets": "101925,106648",
+                        "endColumns": "39,69",
+                        "endOffsets": "101960,106713"
                     }
                 },
                 {
@@ -383,23 +453,6 @@
                     }
                 },
                 {
-                    "source": "D:\\Clander_Shered\\app\\src\\main\\res\\values\\dimen.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "57,103,149",
-                        "endColumns": "44,44,42",
-                        "endOffsets": "97,143,187"
-                    },
-                    "to": {
-                        "startLines": "1451,1452,1453",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "88365,88410,88455",
-                        "endColumns": "44,44,42",
-                        "endOffsets": "88405,88450,88493"
-                    }
-                },
-                {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\1a09c1cde82b2f4212290773a5a6c8db\\transformed\\browser-1.4.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -545,59 +598,6 @@
                         "endLines": "12847",
                         "endColumns": "24",
                         "endOffsets": "788449"
-                    }
-                },
-                {
-                    "source": "D:\\Clander_Shered\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,710",
-                        "endColumns": "143,81,103,108,119,95,72",
-                        "endOffsets": "194,276,380,489,609,705,778"
-                    },
-                    "to": {
-                        "startLines": "1706,1714,1715,1716,1717,1718,1812",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105310,106137,106219,106323,106432,106552,119894",
-                        "endColumns": "143,81,103,108,119,95,72",
-                        "endOffsets": "105449,106214,106318,106427,106547,106643,119962"
-                    }
-                },
-                {
-                    "source": "D:\\Clander_Shered\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "7,2,3,4,5,6,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "293,57,105,153,201,247,336",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "330,99,147,195,241,287,373"
-                    },
-                    "to": {
-                        "startLines": "609,853,854,855,866,867,871",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "30168,47614,47661,47708,48452,48497,48705",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "30205,47656,47703,47750,48492,48537,48742"
-                    }
-                },
-                {
-                    "source": "D:\\Clander_Shered\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "818"
-                    },
-                    "to": {
-                        "startLines": "5791",
-                        "startColumns": "4",
-                        "startOffsets": "391853",
-                        "endLines": "5803",
-                        "endColumns": "12",
-                        "endOffsets": "392555"
                     }
                 },
                 {

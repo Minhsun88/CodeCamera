@@ -6,9 +6,9 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="29"
-8-->D:\Clander_Shered\app\src\main\AndroidManifest.xml
+8-->D:\calendarShared\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->D:\Clander_Shered\app\src\main\AndroidManifest.xml
+9-->D:\calendarShared\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 12    <!-- <uses-sdk android:minSdkVersion="14" /> -->
@@ -20,58 +20,58 @@
 14-->[com.google.firebase:firebase-firestore:24.2.2] C:\Users\a3384\.gradle\caches\transforms-3\dcd6586f01f065786ea98b4ba73f812c\transformed\jetified-firebase-firestore-24.2.2\AndroidManifest.xml:14:22-64
 15
 16    <application
-16-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:5:5-31:19
+16-->D:\calendarShared\app\src\main\AndroidManifest.xml:5:5-31:19
 17        android:allowBackup="true"
-17-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:6:9-35
+17-->D:\calendarShared\app\src\main\AndroidManifest.xml:6:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 18-->[androidx.core:core:1.8.0] C:\Users\a3384\.gradle\caches\transforms-3\3c3eccdf8b0523f6ef1e393a03d6e2a5\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:extractNativeLibs="false"
 21        android:icon="@mipmap/ic_launcher"
-21-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:7:9-43
+21-->D:\calendarShared\app\src\main\AndroidManifest.xml:7:9-43
 22        android:label="@string/app_name"
-22-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:8:9-41
+22-->D:\calendarShared\app\src\main\AndroidManifest.xml:8:9-41
 23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:9:9-54
+23-->D:\calendarShared\app\src\main\AndroidManifest.xml:9:9-54
 24        android:supportsRtl="true"
-24-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:10:9-35
+24-->D:\calendarShared\app\src\main\AndroidManifest.xml:10:9-35
 25        android:testOnly="true"
 26        android:theme="@style/Theme.Design.Light.NoActionBar" >
-26-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:11:9-62
+26-->D:\calendarShared\app\src\main\AndroidManifest.xml:11:9-62
 27        <meta-data
-27-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:12:9-14:45
+27-->D:\calendarShared\app\src\main\AndroidManifest.xml:12:9-14:45
 28            android:name="com.google.android.actions"
-28-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:13:13-54
+28-->D:\calendarShared\app\src\main\AndroidManifest.xml:13:13-54
 29            android:resource="@xml/style" />
-29-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:14:13-42
+29-->D:\calendarShared\app\src\main\AndroidManifest.xml:14:13-42
 30
 31        <activity
-31-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:16:9-18:39
+31-->D:\calendarShared\app\src\main\AndroidManifest.xml:16:9-18:39
 32            android:name="com.example.gp.index"
-32-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:17:13-34
+32-->D:\calendarShared\app\src\main\AndroidManifest.xml:17:13-34
 33            android:exported="true" />
-33-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:18:13-36
+33-->D:\calendarShared\app\src\main\AndroidManifest.xml:18:13-36
 34        <activity
-34-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:19:9-21:39
+34-->D:\calendarShared\app\src\main\AndroidManifest.xml:19:9-21:39
 35            android:name="com.example.gp.register"
-35-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:20:13-37
+35-->D:\calendarShared\app\src\main\AndroidManifest.xml:20:13-37
 36            android:exported="true" />
-36-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:21:13-36
+36-->D:\calendarShared\app\src\main\AndroidManifest.xml:21:13-36
 37        <activity
-37-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:22:9-30:20
+37-->D:\calendarShared\app\src\main\AndroidManifest.xml:22:9-30:20
 38            android:name="com.example.gp.login"
-38-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:23:13-34
+38-->D:\calendarShared\app\src\main\AndroidManifest.xml:23:13-34
 39            android:exported="true" >
-39-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:24:13-36
+39-->D:\calendarShared\app\src\main\AndroidManifest.xml:24:13-36
 40            <intent-filter>
-40-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:25:13-29:29
+40-->D:\calendarShared\app\src\main\AndroidManifest.xml:25:13-29:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:26:17-69
-41-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:26:25-66
+41-->D:\calendarShared\app\src\main\AndroidManifest.xml:26:17-69
+41-->D:\calendarShared\app\src\main\AndroidManifest.xml:26:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:28:17-77
-43-->D:\Clander_Shered\app\src\main\AndroidManifest.xml:28:27-74
+43-->D:\calendarShared\app\src\main\AndroidManifest.xml:28:17-77
+43-->D:\calendarShared\app\src\main\AndroidManifest.xml:28:27-74
 44            </intent-filter>
 45        </activity>
 46

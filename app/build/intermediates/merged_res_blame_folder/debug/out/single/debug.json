@@ -1,238 +1,238 @@
 [
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_navigation.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\menu\\bottom_navigation.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_record_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_record_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_message_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_message_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_post_view.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\post_view.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_save_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_save_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_record_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_record_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\menu_bottom_navigation.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\menu\\bottom_navigation.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_setting.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_setting.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_mms_36.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_mms_36.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_set.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group_set.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_switch_off.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\switch_off.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_photo_library_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_photo_library_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_settings_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_track_selector.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\track_selector.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_post_view.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\post_view.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\navigation_main_navgation.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\navigation\\main_navgation.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_update.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_update.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_background2.png.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\background2.png"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_add.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_note_add.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_mylinearlayout.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\mylinearlayout.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_register.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_register.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_list_alt_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_list_alt_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_botton_nav_icon_color_selector.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\botton_nav_icon_color_selector.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_track_selector.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\track_selector.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_post_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_set.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_set.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_person_black_36.png.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\baseline_person_black_36.png"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_groups_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_groups_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_mylinearlayout2.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\mylinearlayout2.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_background3.png.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\background3.png"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_list_alt_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_list_alt_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_thumb_selector.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\thumb_selector.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_photo_camera_black_24.png.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\baseline_photo_camera_black_24.png"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_setting.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_setting.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_index.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_index.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_switch_on.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\switch_on.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_add.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_add.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_update.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post_update.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_add_36.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_post_add_36.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_photo_camera_black_24.png.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\baseline_photo_camera_black_24.png"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_background2.png.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\background2.png"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_update.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post_update.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_home_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_index.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_index.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_add_36.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_post_add_36.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_background3.png.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\background3.png"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_switch_off.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\switch_off.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_add.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_mylinearlayout2.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\mylinearlayout2.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_mylinearlayout.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\mylinearlayout.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_item_view.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\item_view.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_register.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_switch_on.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\switch_on.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_mms_36.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_mms_36.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\xml_style.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\xml\\style.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_post.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\xml_style.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\xml\\style.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_thumb_selector.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\thumb_selector.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_alert_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_alert_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_botton_nav_icon_color_selector.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\botton_nav_icon_color_selector.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_bg_selector.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\btn_bg_selector.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\navigation_main_navgation.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\navigation\\main_navgation.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_note_update.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_note_update.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_post_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_post_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_message_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_message_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_post_add.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_post_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_alert_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_alert_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_background.png.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\background.png"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_photo_library_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_photo_library_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_person_black_36.png.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\baseline_person_black_36.png"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_groups_24.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\ic_baseline_groups_24.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\drawable_background.png.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\drawable\\background.png"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_btn_bg_selector.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\btn_bg_selector.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_add.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\fragment_group_add.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_group_add.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\fragment_group_add.xml"
     },
     {
-        "merged": "D:\\Clander_Shered\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_save_24.xml.flat",
-        "source": "D:\\Clander_Shered\\app\\src\\main\\res\\drawable\\ic_baseline_save_24.xml"
+        "merged": "D:\\calendarShared\\app\\build\\intermediates\\merged_res\\debug\\layout_item_view.xml.flat",
+        "source": "D:\\calendarShared\\app\\src\\main\\res\\layout\\item_view.xml"
     }
 ]
