@@ -33,7 +33,6 @@ public class GroupFragment extends Fragment {
     private FirebaseAuth Auth = FirebaseAuth.getInstance();
     ArrayList<String> GroupList = new ArrayList<>();
     ArrayList<String> NameList = new ArrayList<>();
-    int check = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,10 +56,22 @@ public class GroupFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for (QueryDocumentSnapshot doc : task.getResult()){
-                            ArrayList<String> list = (ArrayList<String>) doc.get("member");
+                            String master = doc.get("master").toString();
+                            ArrayList<String> leaderList = (ArrayList<String>) doc.get("leader");
+                            ArrayList<String> memberList = (ArrayList<String>) doc.get("member");
 
-                            for (int i = 0; i < list.size(); i++){
-                                if(list.get(i).equals(Auth.getCurrentUser().getEmail())){
+                            if(master.equals(Auth.getCurrentUser().getEmail())){
+                                NameList.add(doc.get("GroupName").toString());
+                                GroupList.add(doc.getId());
+                            }
+                            for (int i = 0; i < leaderList.size(); i++){
+                                if(leaderList.get(i).equals(Auth.getCurrentUser().getEmail())){
+                                    NameList.add(doc.get("GroupName").toString());
+                                    GroupList.add(doc.getId());
+                                }
+                            }
+                            for (int i = 0; i < memberList.size(); i++){
+                                if(memberList.get(i).equals(Auth.getCurrentUser().getEmail())){
                                     NameList.add(doc.get("GroupName").toString());
                                     GroupList.add(doc.getId());
                                 }
