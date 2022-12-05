@@ -48,16 +48,22 @@ public class UpdatePostFragment extends Fragment {
 
         Bundle bundle = getArguments();
 
-        StorageRef.child("RegisterImg").child(Auth.getCurrentUser().getEmail())
-                .getDownloadUrl()
-                .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Glide.with(getContext())
-                                .load(uri)
-                                .into(B.PostImg);
-                    }
-                });
+        if(!bundle.getString("author").equals("")){
+            StorageRef.child("RegisterImg").child(bundle.getString("author"))
+                    .getDownloadUrl()
+                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Glide.with(getContext())
+                                    .load(uri)
+                                    .into(B.PostImg);
+                        }
+                    });
+        }else {
+            Glide.with(getContext())
+                    .load(R.drawable.baseline_person_black_36)
+                    .into(B.PostImg);
+        }
         B.textViewName.setText(bundle.getString("name"));
         B.PostEdText.setText(bundle.getString("text"));
 

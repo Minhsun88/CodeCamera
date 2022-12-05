@@ -56,14 +56,6 @@ public class PostFragment extends Fragment {
         B.RecyclerView.setAdapter(adapter);
         EventChangeListener();
 
-        if(getArguments() != null) {
-            Bundle bundle = getArguments();
-            position = bundle.getInt("position");
-
-            B.RecyclerView.scrollToPosition(position);
-        }
-
-
         return view;
     }
 

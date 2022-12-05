@@ -39,7 +39,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private ArrayList<Note> arrayListNote;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private FirebaseAuth Auth = FirebaseAuth.getInstance();
 
     public NoteAdapter(Context mContext, ArrayList<Note> arrayListNote) {
         this.mContext = mContext;

@@ -37,6 +37,7 @@ public class NoteFragment extends Fragment {
 
     ArrayList<Note> arrayListNote = new ArrayList<Note>();
     NoteAdapter adapter;
+    Integer position = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,14 +58,6 @@ public class NoteFragment extends Fragment {
         B.RecyclerView.setAdapter(adapter);
         EventChangeListener();
 
-        try {
-            Bundle bundle = getArguments();
-            Integer position = bundle.getInt("position");
-            B.RecyclerView.smoothScrollToPosition(position);
-            Log.d("AAAAA",String.valueOf(position));
-        }catch (Exception e){
-            Log.d("AAAAA",e.getMessage());
-        }
         return view;
     }
 

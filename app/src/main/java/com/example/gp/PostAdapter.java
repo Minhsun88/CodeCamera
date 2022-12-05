@@ -76,26 +76,33 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         String Author = post.PostAuthor;
         long Count = post.PostPicCount;
 
-        db.collection("MemberData")
-                .document(Author)
-                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                holder.textViewName.setText(task.getResult().get("name").toString());
-            }
-        });
-        //大頭貼
-        StorageRef.child("RegisterImg").child(Author)
-                .getDownloadUrl()
-                .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Glide.with(mContext)
-                                .load(uri)
-                                .into(holder.imageView);
-                    }
-                });
+        if(Author.equals("")){
+            holder.textViewName.setText("查無此人");
 
+            Glide.with(mContext)
+                    .load(R.drawable.baseline_person_black_36)
+                    .into(holder.imageView);
+        }else {
+            db.collection("MemberData")
+                    .document(Author)
+                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    holder.textViewName.setText(task.getResult().get("name").toString());
+                }
+            });
+
+            StorageRef.child("RegisterImg").child(Author)
+                    .getDownloadUrl()
+                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Glide.with(mContext)
+                                    .load(uri)
+                                    .into(holder.imageView);
+                        }
+                    });
+        }
         holder.textViewText.setText(Text);
         holder.textViewTime.setText(Time);
 
@@ -130,6 +137,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 Bundle bundle = new Bundle();
                 UpdatePostFragment updatePostFragment = new UpdatePostFragment();
 
+                bundle.putString("author", Author);
                 bundle.putString("name", holder.textViewName.getText().toString());
                 bundle.putString("text", Text);
                 bundle.putString("id", Id);
