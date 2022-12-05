@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +14,7 @@ import androidx.viewbinding.ViewBindings;
 import com.example.gp.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -51,7 +51,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputEditText edTPassword2;
 
   @NonNull
-  public final ImageView imageView;
+  public final CircleImageView imageView;
 
   @NonNull
   public final TextView textView2;
@@ -61,7 +61,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
       @NonNull TextInputLayout TextInputLayout3, @NonNull TextInputLayout TextInputLayout4,
       @NonNull Button btnRegister, @NonNull TextInputEditText edTAccount,
       @NonNull TextInputEditText edTName, @NonNull TextInputEditText edTPassword,
-      @NonNull TextInputEditText edTPassword2, @NonNull ImageView imageView,
+      @NonNull TextInputEditText edTPassword2, @NonNull CircleImageView imageView,
       @NonNull TextView textView2) {
     this.rootView = rootView;
     this.TextInputLayout1 = TextInputLayout1;
@@ -159,7 +159,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      CircleImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }

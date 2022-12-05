@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Calendar_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "D:\\Calendar_Shared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\00766b72176befa386757e4841622dc2\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-uz\\values.xml",

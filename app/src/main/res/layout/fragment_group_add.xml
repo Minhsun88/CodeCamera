@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".GroupAddFragment">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -12,7 +14,11 @@
             android:id="@+id/GroupName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/mylinearlayout"
             android:hint="群組名稱"
+            android:textSize="24dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -21,7 +27,11 @@
             android:id="@+id/Accept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/mylinearlayout"
             android:text="確認新增"
+            android:textSize="24dp"
+            android:textColor="#3F51B5"
+            android:layout_margin="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

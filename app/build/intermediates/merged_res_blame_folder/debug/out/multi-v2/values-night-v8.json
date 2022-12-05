@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Calendar_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Calendar_Shared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\23ea1596c1fc0dc74a6469f2fce2f587\\transformed\\appcompat-1.4.2\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "D:\\Calendar_Shered\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "D:\\Calendar_Shared\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".GroupSetFragment">
 
@@ -16,21 +17,32 @@
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="28dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
         <ListView
             android:id="@+id/member"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/GroupName"
+            android:background="@drawable/mylinearlayout"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/GroupName" />
+
         <EditText
             android:id="@+id/memberId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/mylinearlayout"
             android:hint="請輸入對象mail"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/addMember"/>
@@ -38,7 +50,11 @@
             android:id="@+id/addMember"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/mylinearlayout"
             android:text="新增成員"
+            android:textSize="20dp"
+            android:textColor="#3F51B5"
+            android:layout_margin="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/deleteGroup"/>
@@ -46,7 +62,11 @@
             android:id="@+id/deleteGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/mylinearlayout"
             android:text="刪除群組"
+            android:textSize="20dp"
+            android:textColor="#3F51B5"
+            android:layout_margin="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

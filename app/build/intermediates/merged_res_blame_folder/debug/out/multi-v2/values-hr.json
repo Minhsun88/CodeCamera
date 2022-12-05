@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Calendar_Shered\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
+            "outputFile": "D:\\Calendar_Shared\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\a3384\\.gradle\\caches\\transforms-3\\5ac87a515d9f3c183d77aaa2d206c59d\\transformed\\core-1.8.0\\res\\values-hr\\values-hr.xml",

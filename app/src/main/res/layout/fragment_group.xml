@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
     tools:context=".GroupFragment">
 
     <LinearLayout
@@ -12,21 +13,29 @@
         <Spinner
             android:id="@+id/Spinner"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/mylinearlayout"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/GroupAdd"
+            android:background="@drawable/mylinearlayout"
             android:text="新增群組"
-            android:textSize="30dp" />
+            android:textSize="24dp"
+            android:layout_margin="5dp"
+            android:textColor="#3F51B5"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/GroupSet"
             android:text="群組設定"
-            android:textSize="30dp" />
+            android:textSize="24dp"
+            android:background="@drawable/mylinearlayout"
+            android:layout_margin="5dp"
+            android:textColor="#3F51B5"/>
     </LinearLayout>
 
 </FrameLayout>

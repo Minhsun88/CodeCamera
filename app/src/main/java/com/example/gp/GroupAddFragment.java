@@ -45,9 +45,10 @@ public class GroupAddFragment extends Fragment {
                     HashMap<String,Object> group = new HashMap<>();
                     ArrayList<String> member = new ArrayList<>();
 
-                    member.add(Auth.getCurrentUser().getEmail());
                     group.put("GroupName",B.GroupName.getText().toString());
-                    group.put("member",member);
+                    group.put("master", Auth.getCurrentUser().getEmail());
+                    group.put("member", member);
+                    group.put("leader", member);
                     db.collection("Groups")
                             .add(group);
 

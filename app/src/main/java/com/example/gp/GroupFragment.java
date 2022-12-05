@@ -46,7 +46,7 @@ public class GroupFragment extends Fragment {
         View view= B.getRoot();
 
         ArrayAdapter adapter = new ArrayAdapter<String>(getContext(),
-                R.layout.support_simple_spinner_dropdown_item,
+                R.layout.spinner_text,
                 NameList);
         B.Spinner.setAdapter(adapter);
 
