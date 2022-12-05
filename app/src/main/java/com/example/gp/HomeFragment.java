@@ -101,8 +101,21 @@ public class HomeFragment extends Fragment {
 
                 for(int i = 0; i < list.size(); i++){
                     if(selectedDay.equals(sdf.format(list.get(i).PostTimes))){
-                        arrayAdapter.add(list.get(i).PostAuthor.substring(0,5) + "的貼文");
-                        PositionList.add(i);
+                        if(!list.get(i).PostAuthor.equals("")){
+                            db.collection("MemberData")
+                                    .document(list.get(i).PostAuthor)
+                                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    arrayAdapter.add(task.getResult().get("name") + "的貼文");
+                                }
+                            });
+
+                            PositionList.add(i);
+                        }else {
+                            arrayAdapter.add("查無此人(已踢出)的貼文");
+                            PositionList.add(i);
+                        }
                     }
                 }
 
@@ -126,20 +139,7 @@ public class HomeFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
-                        }).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("position",PositionList.get(which));
-
-                                PostFragment postFragment = new PostFragment();
-                                postFragment.setArguments(bundle);
-
-                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout,postFragment);
-                                fragmentTransaction.commit();
-                            }
-                        });
+                        }).setAdapter(arrayAdapter, null);
 
                 builder.show();
             }
@@ -194,20 +194,7 @@ public class HomeFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
-                        }).setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("position",PositionList.get(which));
-
-                                NoteFragment noteFragment = new NoteFragment();
-                                noteFragment.setArguments(bundle);
-
-                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout, noteFragment);
-                                fragmentTransaction.commit();
-                            }
-                        });
+                        }).setAdapter(arrayAdapter, null);
 
                 builder.show();
             }
