@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment {
         B = FragmentHomeBinding.inflate(inflater, container, false);
         View view = B.getRoot();
 
+
         if (!B.Modeswitch.isChecked()){
             readPost(new PostCallback() {
                 @Override
@@ -95,53 +96,67 @@ public class HomeFragment extends Fragment {
         B.calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(EventDay eventDay) {
-                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item);
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/dd/MM");
-                String selectedDay = sdf.format(eventDay.getCalendar().getTime());
+                db.collection("MemberData")
+                        .document(Auth.getCurrentUser().getEmail())
+                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(!task.getResult().get("group").toString().equals("")){
+                            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item);
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/dd/MM");
+                            String selectedDay = sdf.format(eventDay.getCalendar().getTime());
 
-                for(int i = 0; i < list.size(); i++){
-                    if(selectedDay.equals(sdf.format(list.get(i).PostTimes))){
-                        if(!list.get(i).PostAuthor.equals("")){
-                            db.collection("MemberData")
-                                    .document(list.get(i).PostAuthor)
-                                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    arrayAdapter.add(task.getResult().get("name") + "的貼文");
+                            for(int i = 0; i < list.size(); i++){
+                                if(selectedDay.equals(sdf.format(list.get(i).PostTimes))){
+                                    if(!list.get(i).PostAuthor.equals("")){
+                                        db.collection("MemberData")
+                                                .document(list.get(i).PostAuthor)
+                                                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                arrayAdapter.add(task.getResult().get("name") + "的貼文");
+                                            }
+                                        });
+
+                                        PositionList.add(i);
+                                    }else {
+                                        arrayAdapter.add("查無此人(已踢出)的貼文");
+                                        PositionList.add(i);
+                                    }
                                 }
-                            });
+                            }
 
-                            PositionList.add(i);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
+                                    .setTitle("本日貼文")
+                                    .setIcon(R.drawable.ic_baseline_photo_library_24)
+                                    .setPositiveButton("新增貼文", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            Bundle bundle = new Bundle();
+                                            bundle.putString("Date", selectedDay);
+                                            PostAddFragment postAddFragment = new PostAddFragment();
+                                            postAddFragment.setArguments(bundle);
+
+                                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                            fragmentTransaction.replace(R.id.frame_layout, postAddFragment);
+                                            fragmentTransaction.commit();
+                                        }
+                                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    }).setAdapter(arrayAdapter, null);
+
+                            builder.show();
                         }else {
-                            arrayAdapter.add("查無此人(已踢出)的貼文");
-                            PositionList.add(i);
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle(Auth.getCurrentUser().getEmail())
+                                    .setMessage("尚未設定群組，請至群組區設置")
+                                    .setPositiveButton("返回", null).show();
                         }
                     }
-                }
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
-                        .setTitle("本日貼文")
-                        .setIcon(R.drawable.ic_baseline_photo_library_24)
-                        .setPositiveButton("新增貼文", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Bundle bundle = new Bundle();
-                                bundle.putString("Date", selectedDay);
-                                PostAddFragment postAddFragment = new PostAddFragment();
-                                postAddFragment.setArguments(bundle);
-
-                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout, postAddFragment);
-                                fragmentTransaction.commit();
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        }).setAdapter(arrayAdapter, null);
-
-                builder.show();
+                });
             }
         });
     }

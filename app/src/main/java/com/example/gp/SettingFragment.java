@@ -62,14 +62,18 @@ public class SettingFragment extends Fragment {
                     if (document.exists()) {
                         B.nickName.setText(document.getData().get("name").toString());
 
-                        db.collection("Groups")
-                                .document(task.getResult().get("group").toString())
-                                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                B.GroupName.setText(task.getResult().get("GroupName").toString());
-                            }
-                        });
+                        if(!task.getResult().get("group").toString().equals("")){
+                            db.collection("Groups")
+                                    .document(task.getResult().get("group").toString())
+                                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    B.GroupName.setText(task.getResult().get("GroupName").toString());
+                                }
+                            });
+                        }else {
+                            B.GroupName.setText("無群組");
+                        }
                     }
                 }
             }

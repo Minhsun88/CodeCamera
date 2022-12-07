@@ -102,7 +102,7 @@ public class GroupSetFragment extends Fragment {
                         }else {
                             new AlertDialog.Builder(getContext())
                                     .setTitle(Auth.getCurrentUser().getEmail())
-                                    .setMessage("您不是GM，無法設置權限")
+                                    .setMessage("權限不足，無法設置權限")
                                     .setNegativeButton("返回",null).show();
                         }
                     }
@@ -155,7 +155,7 @@ public class GroupSetFragment extends Fragment {
                         } else {
                             new AlertDialog.Builder(getContext())
                                     .setTitle(Auth.getCurrentUser().getEmail())
-                                    .setMessage("您沒有新增人員的權限")
+                                    .setMessage("權限不足，無法新增人員")
                                     .setNegativeButton("返回", null).show();
                             B.memberId.setText("");
                         }
@@ -167,76 +167,93 @@ public class GroupSetFragment extends Fragment {
         B.deleteGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(getContext())
-                        .setTitle("刪除")
-                        .setMessage("確定要刪除群組？")
-                        .setPositiveButton("確認", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                db.collection("Groups")
-                                        .document(userGroup)
-                                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                ArrayList<String> member = (ArrayList<String>) task.getResult().get("member");
+                db.collection("Groups")
+                        .document(userGroup)
+                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        String master = task.getResult().get("master").toString();
 
-                                                for(int i = 0; i < member.size(); i++){
-                                                    db.collection("MemberData")
-                                                            .document(member.get(i))
-                                                            .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                                @Override
-                                                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                                    if(task.getResult().get("group").toString().equals(userGroup)){
-                                                                        db.collection("MemberData")
-                                                                                .document(task.getResult().getId())
-                                                                                .update("group","");
-                                                                    }
+                        if(master.equals(Auth.getCurrentUser().getEmail())){
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("刪除")
+                                    .setMessage("確定要刪除群組？")
+                                    .setPositiveButton("確認", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            db.collection("Groups")
+                                                    .document(userGroup)
+                                                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                    ArrayList<String> member = (ArrayList<String>) task.getResult().get("member");
+
+                                                    for(int i = 0; i < member.size(); i++){
+                                                        db.collection("MemberData")
+                                                                .document(member.get(i))
+                                                                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                if(task.getResult().get("group").toString().equals(userGroup)){
+                                                                    db.collection("MemberData")
+                                                                            .document(task.getResult().getId())
+                                                                            .update("group","");
                                                                 }
-                                                            });
-                                                }
-
-                                                db.collection("Groups")
-                                                        .document(userGroup)
-                                                        .delete();
-                                            }
-                                        });
-                                db.collection("Posts")
-                                        .whereEqualTo("PostGroup", userGroup)
-                                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                for(DocumentSnapshot doc : task.getResult()){
-                                                    for (int j = 0 ; j < (long) doc.get("PostPicCount") ; j++){
-                                                        StorageReference ref = StorageRef.child("PostImg").child(doc.getId() + "_" + j);
-
-                                                        ref.delete()
-                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                                    @Override
-                                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                                        Log.d("AAAAA","刪除照片成功");
-                                                                    }
-                                                                })
-                                                                .addOnFailureListener(new OnFailureListener() {
-                                                                    @Override
-                                                                    public void onFailure(@NonNull Exception e) {
-                                                                        Log.d("AAAAA","刪除照片失敗");
-                                                                    }
-                                                                });
+                                                            }
+                                                        });
                                                     }
 
-                                                    db.collection("Post")
-                                                            .document(doc.getId())
+                                                    db.collection("Groups")
+                                                            .document(userGroup)
                                                             .delete();
                                                 }
-                                            }
-                                        });
+                                            });
+                                            db.collection("Posts")
+                                                    .whereEqualTo("PostGroup", userGroup)
+                                                    .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                    for(DocumentSnapshot doc : task.getResult()){
+                                                        for (int j = 0 ; j < (long) doc.get("PostPicCount") ; j++){
+                                                            StorageReference ref = StorageRef.child("PostImg").child(doc.getId() + "_" + j);
 
-                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                                fragmentTransaction.replace(R.id.frame_layout, new GroupFragment());
-                                fragmentTransaction.commit();
-                            }
-                        })
-                        .setNegativeButton("取消返回",null).show();
+                                                            ref.delete()
+                                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                        @Override
+                                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                                            Log.d("AAAAA","刪除照片成功");
+                                                                        }
+                                                                    })
+                                                                    .addOnFailureListener(new OnFailureListener() {
+                                                                        @Override
+                                                                        public void onFailure(@NonNull Exception e) {
+                                                                            Log.d("AAAAA","刪除照片失敗");
+                                                                        }
+                                                                    });
+                                                        }
+
+                                                        db.collection("Post")
+                                                                .document(doc.getId())
+                                                                .delete();
+                                                    }
+                                                }
+                                            });
+
+                                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                            fragmentTransaction.replace(R.id.frame_layout, new GroupFragment());
+                                            fragmentTransaction.commit();
+                                        }
+                                    })
+                                    .setNegativeButton("取消返回",null).show();
+                        }else {
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle(Auth.getCurrentUser().getEmail())
+                                    .setMessage("權限不足，無法刪除群組")
+                                    .setPositiveButton("返回", null).show();
+                        }
+                    }
+                });
+
             }
         });
 
