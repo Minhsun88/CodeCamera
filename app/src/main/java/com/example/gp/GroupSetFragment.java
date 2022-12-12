@@ -186,7 +186,35 @@ public class GroupSetFragment extends Fragment {
                                                     .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                    String master = task.getResult().get("master").toString();
+                                                    ArrayList<String> leader = (ArrayList<String>) task.getResult().get("leader");
                                                     ArrayList<String> member = (ArrayList<String>) task.getResult().get("member");
+
+                                                    db.collection("MemberData")
+                                                            .document(master)
+                                                            .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                            db.collection("MemberData")
+                                                                    .document(task.getResult().getId())
+                                                                    .update("group","");
+                                                        }
+                                                    });
+
+                                                    for(int i = 0; i < leader.size(); i++){
+                                                        db.collection("MemberData")
+                                                                .document(leader.get(i))
+                                                                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                if(task.getResult().get("group").toString().equals(userGroup)){
+                                                                    db.collection("MemberData")
+                                                                            .document(task.getResult().getId())
+                                                                            .update("group","");
+                                                                }
+                                                            }
+                                                        });
+                                                    }
 
                                                     for(int i = 0; i < member.size(); i++){
                                                         db.collection("MemberData")
